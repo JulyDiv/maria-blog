@@ -1,21 +1,18 @@
 import Head from "next/head";
-import axios from "axios";
+// import axios from "axios";
 
 export default function BlogPage() {
-  const getData = async () => {
-    return await axios
-      .get("https://broad-accidental-servant.glitch.me/posts", {})
-      .then(({ data }) => {
-        setPosts(data);
-      })
-      .catch((error) => {
-        console.error(error.message);
-      });
-  };
+  // const getData = async () => {
+  //   return await axios
+  //     .get("https://broad-accidental-servant.glitch.me/posts", {})
+  //     .then(({ data }) => {
+  //       setPosts(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error.message);
+  //     });
+  // };
 
-  useEffect(() => {
-    getData();
-  }, []);
   return (
     <>
       <Head>
