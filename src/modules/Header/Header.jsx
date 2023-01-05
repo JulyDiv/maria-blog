@@ -1,10 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { Login } from "../Login/Login";
+import { ModalPost } from "../ModalPost/ModalPost";
 
 export const Header = ({ setIsLogin, isLogged, isLogin, setIsLogged }) => {
-
+    const [title, setTitle] = useState("");
+    const [text, setText] = useState("");
+    const [date, setDate] = useState("");
+    const [imgs, setImgs] = useState("");
   return (
     <>
       <header className="header">
@@ -47,18 +51,24 @@ export const Header = ({ setIsLogin, isLogged, isLogin, setIsLogged }) => {
                   </Link>
                 </div>
                 {isLogin && (
-                  <Login
-                    setIsLogin={setIsLogin}
-                    setIsLogged={setIsLogged}
-                  />
+                  <Login setIsLogin={setIsLogin} setIsLogged={setIsLogged} />
                 )}
                 {isLogged ? (
-                  <button
-                    className="navbar-login__button"
-                    onClick={() => setIsLogged(false)}
-                  >
-                    Я дома
-                  </button>
+                  <>
+                    <ModalPost
+                      imgs={imgs}
+                      setImgs={setImgs}
+                      text={text}
+                      title={title}
+                      date={date}
+                    />
+                    <button
+                      className="navbar-login__button"
+                      onClick={() => setIsLogged(false)}
+                    >
+                      Я дома
+                    </button>
+                  </>
                 ) : (
                   <button
                     className="navbar-login__button"

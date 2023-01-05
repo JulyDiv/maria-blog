@@ -44,7 +44,7 @@ export const Login = ({ setIsLogged, setIsLogin }) => {
           />
           <input
             {...register("password")}
-            type="text"
+            type="password"
             style={{ border: "1px solid black" }}
           />
           <button type="submit">Войти</button>

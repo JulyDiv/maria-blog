@@ -3,14 +3,14 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import axios from "axios";
 import { PostItem } from "../../components/PostItem";
-// import { ModalPost } from "../ModalPost/ModalPost";
+import { ModalPost } from "../ModalPost/ModalPost";
 
-export const Blog = () => {
+export const Blog = ({ isLogged }) => {
   const [posts, setPosts] = useState([]);
-  const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
-  const [date, setDate] = useState("");
-  const [imgs, setImgs] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [text, setText] = useState("");
+  // const [date, setDate] = useState("");
+  // const [imgs, setImgs] = useState("");
   const [showMoreBtn, setShowMoreBtn] = useState(false);
 
   const getData = async () => {
@@ -27,8 +27,6 @@ export const Blog = () => {
   useEffect(() => {
     getData();
   }, []);
-
-  //console.log(posts);
 
   return (
     <>
@@ -96,7 +94,6 @@ export const Blog = () => {
           </div>
         </div>
       </section>
-      {/* <ModalPost imgs={imgs} text={text} title={title} date={date} /> */}
     </>
   );
 };

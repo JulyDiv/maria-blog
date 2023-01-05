@@ -1,8 +1,14 @@
 import Head from "next/head";
+import { useState } from "react";
 import { Clip } from "../modules/Clip/Clip";
 import { Blog } from "../modules/Blog/Blog";
+import { useIsLogin } from "../hooks/useIs";
+import { useIsLogged } from "../hooks/useIs";
 
 export default function HomePage() {
+
+  const isLogin = useIsLogin();
+  const isLogged = useIsLogged();
 
   return (
     <>
@@ -17,7 +23,7 @@ export default function HomePage() {
         setIsLogged={setIsLogged}
       /> */}
       <Clip />
-      <Blog />
+      <Blog {...isLogin} {...isLogged} />
     </>
   );
 }

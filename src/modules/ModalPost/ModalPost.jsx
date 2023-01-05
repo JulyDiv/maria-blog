@@ -2,10 +2,11 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
-export const ModalPost = ({ imgs, text, title }) => {
+export const ModalPost = ({ imgs, text, title, setImgs }) => {
   const { register, handleSubmit } = useForm();
+
   const onSubmit = (data) => {
-    console.log(data);
+    const { title, text } = data;
     axios
       .post("https://broad-accidental-servant.glitch.me/posts", {
         img: imgs,
@@ -19,17 +20,17 @@ export const ModalPost = ({ imgs, text, title }) => {
         console.log(error.message);
       });
   };
-  // const onDelete = (data) => {
-  //   console.log(data);
-  //   axios
-  //     .delete("https://broad-accidental-servant.glitch.me/posts/6")
-  //     .then(({ data }) => {
-  //       console.log(data);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error.message);
-  //     });
-  // };
+  const onDelete = (data) => {
+    console.log(data);
+    axios
+      .delete("https://broad-accidental-servant.glitch.me/posts/5")
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      });
+  };
   const handleSubmits = (e) => {
     //let wrapper = document.querySelector(".posts-main");
     let file = e.target.files[0];
@@ -49,24 +50,26 @@ export const ModalPost = ({ imgs, text, title }) => {
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
+          {...register("title")}
+          type="text"
+          //onChange={(e) => setTitle(e.target.value)}
+          style={{ border: "1px solid black" }}
+        />
+        <input
+          {...register("text")}
+          type="text"
+          //onChange={(e) => setText(e.target.value)}
+          style={{ border: "1px solid green" }}
+        />
+        <input
           {...register("img")}
           type="file"
           onChange={(e) => handleSubmits(e)}
         />
         <button type="submit">GO</button>
       </form>
-      <input
-        type="text"
-        onChange={(e) => setTitle(e.target.value)}
-        style={{ border: "1px solid black" }}
-      />
 
-      <input
-        type="text"
-        onChange={(e) => setText(e.target.value)}
-        style={{ border: "1px solid green" }}
-      />
-      <button onClick={() => onSubmit()}>GO</button>
+      {/* <button onClick={() => onSubmit()}>GO</button> */}
       <button onClick={() => onDelete()}>DELETE</button>
     </>
   );
