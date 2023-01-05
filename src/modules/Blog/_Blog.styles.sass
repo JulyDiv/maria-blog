@@ -4,29 +4,63 @@
         display: flex
         justify-content: space-between
 .posts
-    display: flex
-    justify-content: space-between
-    width: 70%
+    &-top
+        display: flex
+        width: 95%
+        justify-content: space-between
+        align-items: center
+        &__span
+            text-transform: uppercase
+        &__line
+            display: inline-block
+            width: 90%
+            height: 3px
+            background-color: #a01111
+    &-wrapper
+        display: flex
+        justify-content: space-between
+        padding: 50px 0
+        width: 95%
+        //border-top: 3px solid #a01111
     &-main
-        width: 80%
+        width: 60%
         &__img
-            margin-bottom: 20px
+            margin-bottom: 30px
+            //width: 600px
         &__title
             margin-bottom: 20px
+        &__text
+            padding: 10px 0 0 0
+            line-height: 25px
+            border-top: 3px solid #a01111
+        &__span
+            display: inline-block
+            margin-bottom: 30px
     &-choice
         display: flex
         flex-direction: column
         justify-content: space-between
+        padding: 20px 0
+        width: 400px
+        height: 700px
         &__item
             display: flex
+            //width: 300px
+            //height: 300px
         &__img
-            margin-right: 20px
+            margin: 0px 20px 0px 0px
+            width: 200px
+            height: 150px
+        &__block
+            padding: 10px 0
+            width: 100%
         &__title
             margin-bottom: 20px
 .contacts
     display: flex
     flex-direction: column
     justify-content: space-between
+    padding: 40px 0 0 0
     height: 600px
     &-icon
         display: flex
@@ -40,7 +74,7 @@
             background-size: 70%
             background-position: center
             background-repeat: no-repeat
-            background-color: grey
+            background-color: #a0111128
         &__telegram
             background-image: url("../../public/img/telegram.svg")
         &__instagram
@@ -51,5 +85,5 @@
             background-image: url("../../public/img/vk.svg")
     &-target
         width: 300px
-        height: 300px
-        background-color: grey
+        height: 400px
+        background-color: #a0111128

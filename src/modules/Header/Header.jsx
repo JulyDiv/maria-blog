@@ -1,57 +1,72 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React from "react";
+import { Login } from "../Login/Login";
 
-export const Header = () => {
+export const Header = ({ setIsLogin, isLogged, isLogin, setIsLogged }) => {
+
   return (
     <>
       <header className="header">
         <div className="header-wrapper">
           <div className="container">
-            <main className="top">
+            <div className="top">
               <img src="/img/logo.png" alt="logo" className="top__logo" />
-              <div className="top__news"></div>
-            </main>
+              <div className="top__news">
+                <div className="top-wrapper">
+                  <h4 className="top__title">
+                    Разработка сайтов и Web-приложений
+                  </h4>
+                  <p className="top__text">Под ключ/Уникальный крутой дизайн</p>
+                  <Link
+                    href="https://t.me/julia_gerber"
+                    className="top__link"
+                  ></Link>
+                </div>
+              </div>
+            </div>
           </div>
           <nav className="navbar">
             <div className="container">
               <div className="navbar-wrapper">
                 <div className="navbar-link">
-                  <Link href="#" className="navbar-link__item">
-                    dfjjgj
+                  <Link href="/" className="navbar-link__item">
+                    Обо мне
                   </Link>
-                  <Link href="#" className="navbar-link__item">
-                    ghjdgh
+                  <Link href="/blog" className="navbar-link__item">
+                    Мой Блог
                   </Link>
-                  <Link href="#" className="navbar-link__item">
-                    fgjgj
+                  <Link href="/" className="navbar-link__item">
+                    Услуги
                   </Link>
-                  <Link href="#" className="navbar-link__item">
-                    fghfg
+                  <Link href="/" className="navbar-link__item">
+                    Кейсы
                   </Link>
-                  <Link href="#" className="navbar-link__item">
-                    fghfghfth
+                  <Link href="/" className="navbar-link__item">
+                    Проекты
                   </Link>
                 </div>
-                {/* <div className="navbar-icon">
-                  <Link
-                    href="#"
-                    className="navbar-icon__item navbar-icon__telegram"
-                  ></Link>
-                  <Link
-                    href="#"
-                    className="navbar-icon__item navbar-icon__instagram"
-                  ></Link>
-                  <Link
-                    href="#"
-                    className="navbar-icon__item navbar-icon__youtube"
-                  ></Link>
-                  <Link
-                    href="#"
-                    className="navbar-icon__item navbar-icon__vk"
-                  ></Link>
-                </div> */}
-                <button className="navbar-login__button">Login</button>
+                {isLogin && (
+                  <Login
+                    setIsLogin={setIsLogin}
+                    setIsLogged={setIsLogged}
+                  />
+                )}
+                {isLogged ? (
+                  <button
+                    className="navbar-login__button"
+                    onClick={() => setIsLogged(false)}
+                  >
+                    Я дома
+                  </button>
+                ) : (
+                  <button
+                    className="navbar-login__button"
+                    onClick={() => setIsLogin(true)}
+                  >
+                    Моя кнопка
+                  </button>
+                )}
               </div>
             </div>
           </nav>
