@@ -35,12 +35,14 @@ export const Blog = ({ isLogged }) => {
           <div className="blog-wrapper">
             <div className="posts">
               <div className="posts-top">
-                <Link href="/blog" className="posts-top__span">Мой Блог</Link>
+                <Link href="/blog" className="posts-top__span">
+                  Мой Блог
+                </Link>
                 <span className="posts-top__line"></span>
               </div>
 
               <div className="posts-wrapper">
-                {posts.slice(0, 1).map(({ id, title, img, text, date }) => (
+                {posts.map(({ id, title, img, text, date }) => (
                   <div key={id} className="posts-main">
                     <img
                       className="posts-main__img"
@@ -63,10 +65,36 @@ export const Blog = ({ isLogged }) => {
                     </p>
                   </div>
                 ))}
+                {/* {posts.slice(0, 1).map(({ id, title, img, text, date }) => (
+                  <div key={id} className="posts-main">
+                    <img
+                      className="posts-main__img"
+                      src={img}
+                      alt="photo: post"
+                    />
+                    <h4 className="posts-main__title">{title}</h4>
+                    <span className="posts-main__span">{date}</span>
+                    <p className="posts-main__text">
+                      {text.lenght <= 700 ? text : text.substr(0, 700)}
+                      {!showMoreBtn && (
+                        <>
+                          <span>...</span>
+                          <button onClick={() => setShowMoreBtn(true)}>
+                            Читать дальше
+                          </button>
+                        </>
+                      )}
+                      {showMoreBtn && text.substr(700)}
+                    </p>
+                  </div>
+                ))} */}
                 <div className="posts-choice">
-                  {posts.slice(0, 4).map((posts, id) => (
+                  {/* {posts.map((posts, id) => (
                     <PostItem key={id} posts={posts} />
-                  ))}
+                  ))} */}
+                  {/* {posts.slice(0, 4).map((posts, id) => (
+                    <PostItem key={id} posts={posts} />
+                  ))} */}
                 </div>
               </div>
             </div>

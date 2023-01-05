@@ -9,6 +9,7 @@ export const PostItem = ({ posts }) => {
           <div className="posts-choice__block">
             <h4 className="posts-choice__title">{posts.title}</h4>
             <span className="posts-choice__span">{posts.date}</span>
+            {/* <p>{posts.text}</p> */}
           </div>
         </div>
       </>
