@@ -1,43 +1,51 @@
+@import '../../../styles/var'
+
 .blog
     padding: 50px 0
-    &-wrapper
+    &_wrapper
         display: flex
         justify-content: space-between
 .posts
-    &-top
+    &_top
         display: flex
         width: 95%
         justify-content: space-between
         align-items: center
         &__span
-            text-transform: uppercase
+            //text-transform: uppercase
         &__line
             display: inline-block
             width: 90%
             height: 3px
             background-color: #a01111
-    &-wrapper
+    &_wrapper
         display: flex
         flex-direction: column
         justify-content: space-between
         padding: 50px 0
         width: 95%
         //border-top: 3px solid #a01111
-    &-main
+    &_main
         width: 60%
         &__img
             margin-bottom: 30px
             //width: 600px
         &__title
             margin-bottom: 20px
+            +title
         &__text
             padding: 10px 0 0 0
             line-height: 25px
-            border-top: 3px solid #a01111
+            color: $textColor
+            border-bottom: 3px solid #ffffff
+            //border-top: 3px solid #a01111
+            white-space: pre-wrap
+            +text
         &__span
             display: inline-block
             margin-bottom: 30px
-    &-choice
+            +link
+    &_choice
         display: flex
         flex-direction: column
         justify-content: space-between
@@ -63,7 +71,7 @@
     justify-content: space-between
     padding: 40px 0 0 0
     height: 600px
-    &-icon
+    &_icon
         display: flex
         justify-content: space-between
         flex-wrap: wrap
@@ -77,14 +85,14 @@
             background-repeat: no-repeat
             background-color: #a0111128
         &__telegram
-            background-image: url("../../public/img/telegram.svg")
+            background-image: url("../../../public/img/telegram.svg")
         &__instagram
-            background-image: url("../../public/img/instagram.svg")
+            background-image: url("../../../public/img/instagram.svg")
         &__youtube
-            background-image: url("../../public/img/youtube.svg")
+            background-image: url("../../../public/img/youtube.svg")
         &__vk
-            background-image: url("../../public/img/vk.svg")
-    &-target
+            background-image: url("../../../public/img/vk.svg")
+    &_target
         width: 300px
         height: 400px
         background-color: #a0111128

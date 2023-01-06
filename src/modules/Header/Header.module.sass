@@ -1,0 +1,71 @@
+@import '../../../styles/var'
+
+.header
+    //height: 150px
+.wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 20px 0
+.title
+    text-transform: uppercase
+    font-size: 56px
+.news
+    display: flex
+    flex-direction: column
+    align-items: center
+    background-image: url("../../../public/img/news.jpg")
+    background-size: 100%
+    background-position: center
+    background-repeat: no-repeat
+    width: 50%
+    text-align: center
+    &_title
+        color: white
+        font-size: 22px
+        animation: 2s neon alternate-reverse infinite
+        +title
+    &_text
+        color: white
+        font-size: 18px
+        animation: 2s neon alternate-reverse infinite
+        +title
+    &_link
+        display: inline-block
+        width: 35px
+        height: 35px
+        border: 1px solid white
+        border-radius: 50%
+        background-image: url("../../../public/img/telegram-white.svg")
+        background-repeat: no-repeat
+        background-position: 28% 50%
+        animation: rotate 10s ease-in infinite
+        +title
+    &_span
+        color: white
+        animation: write 10s ease-in infinite
+        +title
+
+@keyframes neon
+    from
+        text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #BFE2FF
+    to
+        text-shadow: 0 0 20px #BFE2FF, 0 0 -25px #BFE2FF, 0 0 40px #BFE2FF, 0 0 50px #BFE2FF, 0 0 800px #BFE2FF
+
+@keyframes rotate
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+
+@keyframes write
+    0%
+        opacity: 0
+        transform: translateX(-500px)
+    50%
+        opacity: 1
+        transform: translateX(0px)
+        animation-delay: 2s
+    100%
+        opacity: 0
+        //transform: translateX(100px)

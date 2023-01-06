@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
-export const ModalPost = ({ imgs, text, title, setImgs }) => {
+export const ModalPost = ({ imgs, setImgs }) => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
@@ -23,7 +23,7 @@ export const ModalPost = ({ imgs, text, title, setImgs }) => {
   const onDelete = (data) => {
     console.log(data);
     axios
-      .delete("https://broad-accidental-servant.glitch.me/posts/5")
+      .delete("https://broad-accidental-servant.glitch.me/posts")
       .then(({ data }) => {
         console.log(data);
       })
@@ -48,19 +48,27 @@ export const ModalPost = ({ imgs, text, title, setImgs }) => {
 
   return (
     <>
+      <div className="post">
+        <div className=""></div>
+      </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register("title")}
           type="text"
           //onChange={(e) => setTitle(e.target.value)}
-          style={{ border: "1px solid black" }}
         />
-        <input
+        <textarea
+          {...register("text")}
+          type="text"
+          //onChange={(e) => setText(e.target.value)}
+        />
+        {/* <textarea name="" id="" cols="30" rows="10"></textarea> */}
+        {/* <input
           {...register("text")}
           type="text"
           //onChange={(e) => setText(e.target.value)}
           style={{ border: "1px solid green" }}
-        />
+        /> */}
         <input
           {...register("img")}
           type="file"

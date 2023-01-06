@@ -1,5 +1,74 @@
-@import 'settings'
 @import 'var'
-@import '../src/modules/Header/_Header.styles'
-@import '../src/modules/Clip/_Clip.styles'
-@import '../src/modules/Blog/_Blog.styles'
+
+@import url('https://fonts.googleapis.com/css2?family=Spectral+SC&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap')
+
+*
+    box-sizing: border-box
+
+html
+    margin: 0
+    padding: 0
+
+body
+    margin: 0
+    padding: 0
+    width: 100%
+    font-style: normal
+    overflow: auto
+    //background-color: $bgColor
+    //+title
+
+img
+    max-width: 100%
+    height: auto
+
+h1, h2, h3, h4, h5, p
+    margin: 0
+    padding: 0
+
+a
+    text-decoration: none
+    color: inherit
+    cursor: pointer
+    +link
+
+ul, li
+    margin: 0
+    padding: 0
+    list-style: none
+
+button
+    padding: 0
+    font-family: inherit
+    cursor: pointer
+    border: none
+    background-color: transparent
+
+button:focus
+    border: none
+    outline: none
+
+input, textarea
+    appearance: none !important
+    padding: 0
+    border-radius: 0
+    border: none
+    background-color: transparent
+
+input:focus, textarea:focus
+    outline: none
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+    -webkit-appearance: none
+
+fieldset
+    padding: 0 !important
+    margin: 0
+    border: none
+
+.container
+    width: 1400px
+    margin: auto
