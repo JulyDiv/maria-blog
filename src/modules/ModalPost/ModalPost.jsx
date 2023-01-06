@@ -89,7 +89,6 @@ export const ModalPost = ({ imgs, setImgs, setIsModalPost }) => {
               Свернуть панель
             </button>
           </form>
-
           {/* <button onClick={() => onSubmit()}>GO</button> */}
           {/* <button onClick={() => onDelete()}>Удалить пост</button> */}
         </div>

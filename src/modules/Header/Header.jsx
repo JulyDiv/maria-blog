@@ -49,9 +49,10 @@ export const Header = ({ setIsLogin, isLogged, isLogin, setIsLogged }) => {
         <div className={styles.block}>
           <button
             className={styles.button}
-            onClick={() => setIsModalPost(true)}
+            onClick={() => isModalPost ? setIsModalPost(false) : setIsModalPost(true)}
+            //onClick={() => setIsModalPost(true)}
           >
-            Открыть панель
+            {isModalPost ? "Закрыть панель" : "Открыть панель"}
           </button>
         </div>
       ) : (
