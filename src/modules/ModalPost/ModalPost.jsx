@@ -3,7 +3,7 @@ import styles from "./ModalPost.module.sass";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
-export const ModalPost = ({ imgs, setImgs }) => {
+export const ModalPost = ({ imgs, setImgs, setIsModalPost }) => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
@@ -73,16 +73,20 @@ export const ModalPost = ({ imgs, setImgs }) => {
               />
               <label className={styles.label} htmlFor="input_file">
                 <input
-                {...register("img")}
-                type="file"
-                onChange={(e) => handleSubmits(e)}
-                className={styles.file}
-                id="input_file"
-              />
-              Выбери картинку</label>
+                  {...register("img")}
+                  type="file"
+                  onChange={(e) => handleSubmits(e)}
+                  className={styles.file}
+                  id="input_file"
+                />
+                {imgs ? "Картинка готова!" : "Выбери картинку"}
+              </label>
             </div>
             <button className={styles.button} type="submit">
               Добавить пост
+            </button>
+            <button className={styles.button} onClick={() => setIsModalPost(false)}>
+              Свернуть панель
             </button>
           </form>
 

@@ -10,6 +10,7 @@ export const Header = ({ setIsLogin, isLogged, isLogin, setIsLogged }) => {
   //const [title, setTitle] = useState("");
   //const [text, setText] = useState("");
   //const [date, setDate] = useState("");
+  const [isModalPost, setIsModalPost] = useState(false);
   const [imgs, setImgs] = useState("");
   return (
     <>
@@ -40,10 +41,29 @@ export const Header = ({ setIsLogin, isLogged, isLogin, setIsLogged }) => {
         />
       </header>
       {isLogin && <Login setIsLogin={setIsLogin} setIsLogged={setIsLogged} />}
-      <ModalPost
+      {/* <ModalPost
         imgs={imgs}
         setImgs={setImgs}
-      />
+      /> */}
+      {isLogged ? (
+        <div className={styles.block}>
+          <button
+            className={styles.button}
+            onClick={() => setIsModalPost(true)}
+          >
+            Открыть панель
+          </button>
+        </div>
+      ) : (
+        ""
+      )}
+      {isModalPost && (
+        <ModalPost
+          imgs={imgs}
+          setImgs={setImgs}
+          setIsModalPost={setIsModalPost}
+        />
+      )}
       {/* {isLogged && (
         <ModalPost
           imgs={imgs}

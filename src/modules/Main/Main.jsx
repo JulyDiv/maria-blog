@@ -38,6 +38,14 @@ export const Main = ({ isLogged }) => {
             <span className={styles.top_line}></span>
           </div> */}
           <div className={styles.wrapper}>
+            <div
+              style={{
+                width: "500px",
+                height: "700px",
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >ТУТ ЧТО-ТО ПРОИСХОДИТ...</div>
             {/* <div
               className={styles.posts}
               style={{
