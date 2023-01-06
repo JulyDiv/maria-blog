@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styles from "./Login.module.sass";
 import { useForm } from "react-hook-form";
 
 export const Login = ({ setIsLogged, setIsLogin }) => {
@@ -26,29 +27,29 @@ export const Login = ({ setIsLogged, setIsLogin }) => {
     setIsLogin(false);
   };
 
-  // useEffect(() => {
-    
-  //   return () => {
-      
-  //   };
-  // }, []);
   return (
     <>
-      <div>
-        <h1>Вход</h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            {...register("login")}
-            type="text"
-            style={{ border: "1px solid black" }}
-          />
-          <input
-            {...register("password")}
-            type="password"
-            style={{ border: "1px solid black" }}
-          />
-          <button type="submit">Войти</button>
-        </form>
+      <div className={styles.login}>
+        <div className={styles.wrapper}>
+          <h1 className={styles.title}>Вход</h1>
+          <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+              <input
+                {...register("login")}
+                type="text"
+                className={styles.input}
+                placeholder="Логин"
+              />
+              <input
+                {...register("password")}
+                type="password"
+                className={styles.input}
+                placeholder="Пароль"
+              />
+            <button className={styles.button} type="submit">
+              Войти
+            </button>
+          </form>
+        </div>
       </div>
     </>
   );

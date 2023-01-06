@@ -7,9 +7,9 @@ import { ModalPost } from "../ModalPost/ModalPost";
 import { Navbar } from "../Navbar/Navbar";
 
 export const Header = ({ setIsLogin, isLogged, isLogin, setIsLogged }) => {
-  const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
-  const [date, setDate] = useState("");
+  //const [title, setTitle] = useState("");
+  //const [text, setText] = useState("");
+  //const [date, setDate] = useState("");
   const [imgs, setImgs] = useState("");
   return (
     <>
@@ -40,15 +40,16 @@ export const Header = ({ setIsLogin, isLogged, isLogin, setIsLogged }) => {
         />
       </header>
       {isLogin && <Login setIsLogin={setIsLogin} setIsLogged={setIsLogged} />}
-      {isLogged && (
+      <ModalPost
+        imgs={imgs}
+        setImgs={setImgs}
+      />
+      {/* {isLogged && (
         <ModalPost
           imgs={imgs}
           setImgs={setImgs}
-          text={text}
-          title={title}
-          date={date}
         />
-      )}
+      )} */}
     </>
   );
 };

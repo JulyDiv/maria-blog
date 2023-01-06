@@ -18,15 +18,19 @@ body
     font-style: normal
     overflow: auto
     //background-color: $bgColor
-    //+title
 
 img
     max-width: 100%
     height: auto
 
-h1, h2, h3, h4, h5, p
+h1, h2, h3, h4, h5
     margin: 0
     padding: 0
+    +title
+p
+    margin: 0
+    padding: 0
+    +text
 
 a
     text-decoration: none
@@ -45,6 +49,7 @@ button
     cursor: pointer
     border: none
     background-color: transparent
+    +title
 
 button:focus
     border: none
@@ -56,6 +61,7 @@ input, textarea
     border-radius: 0
     border: none
     background-color: transparent
+    +text
 
 input:focus, textarea:focus
     outline: none

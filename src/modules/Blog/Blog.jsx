@@ -1,19 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
-import React, { useState, useEffect, useCallback } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from "react";
 import styles from "./Blog.module.sass";
-import Link from "next/link";
 import axios from "axios";
-// import { PostItem } from "../../components/PostItem";
-import { PostItem } from "../PostItem/PostItem";
-import { ModalPost } from "../ModalPost/ModalPost";
+import { Posts } from "../Posts/Posts";
 
-export const Blog = ({ isLogged }) => {
-  const [posts, setPosts] = useState([]);
-  // const [title, setTitle] = useState("");
-  // const [text, setText] = useState("");
-  // const [date, setDate] = useState("");
-  // const [imgs, setImgs] = useState("");
-  const [showMoreBtn, setShowMoreBtn] = useState(false);
+export const Blog = ({ posts, setPosts }) => {
 
   const getData = async () => {
     return await axios
@@ -26,186 +17,18 @@ export const Blog = ({ isLogged }) => {
       });
   };
 
-  // const reverse = useCallback(() => {
-  //   posts.reverse();
-  // }, [posts])
-
-    useEffect(() => {
-      getData();
-      //reverse();
-    },[]);
-  
-  console.log(posts);
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <>
-      <section className={styles.blog}>
-        <div className="container">
-          <div className={styles.blog_wrapper}>
-            <div className={styles.posts}>
-              <div className={styles.posts_top}>
-                <Link href="/blog" className={styles.posts_top__span}>
-                  GSR-блог
-                </Link>
-                <span className={styles.posts_top__line}></span>
-              </div>
-
-              <div className={styles.posts_wrapper}>
-                {posts
-                  .slice(0)
-                  .reverse()
-                  .map(({ id, title, img, text, date }) => (
-                    <div key={id} className={styles.posts_main}>
-                      <img
-                        className={styles.posts_main__img}
-                        src={img}
-                        alt="photo: post"
-                      />
-                      <h4 className={styles.posts_main__title}>{title}</h4>
-                      <span className={styles.posts_main__span}>{date}</span>
-                      <p className={styles.posts_main__text}>
-                        {text.lenght <= 700 ? text : text.substr(0, 700)}
-                        {!showMoreBtn && (
-                          <>
-                            <span>...</span>
-                            <button onClick={() => setShowMoreBtn(true)}>
-                              Читать дальше
-                            </button>
-                          </>
-                        )}
-                        {showMoreBtn && text.substr(700)}
-                      </p>
-                    </div>
-                  ))}
-                <div className={styles.posts_choice}>
-                  {posts.map((posts, id) => (
-                    <PostItem key={id} posts={posts} />
-                  ))}
-                  {posts.slice(0, 4).map((posts, id) => (
-                    <PostItem key={id} posts={posts} />
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="contacts">
-              <div className="contacts-icon">
-                <Link
-                  href="https://t.me/mariagonzaaa"
-                  className="contacts-icon__item contacts-icon__telegram"
-                ></Link>
-                <Link
-                  href="https://instagram.com/gonzabutterfly?igshid=YmMyMTA2M2Y="
-                  className="contacts-icon__item contacts-icon__instagram"
-                ></Link>
-                <Link
-                  href="https://www.youtube.com/@mariagonzaa"
-                  className="contacts-icon__item contacts-icon__youtube"
-                ></Link>
-                <Link
-                  href="/"
-                  className="contacts-icon__item contacts-icon__vk"
-                ></Link>
-              </div>
-              <div className="contacts-target"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* <section className="blog">
-        <div className="container">
-          <div className="blog-wrapper">
-            <div className="posts">
-              <div className="posts-top">
-                <Link href="/blog" className="posts-top__span">
-                  GSR-блог
-                </Link>
-                <span className="posts-top__line"></span>
-              </div>
-
-              <div className="posts-wrapper">
-                {posts
-                  .slice(0)
-                  .reverse()
-                  .map(({ id, title, img, text, date }) => (
-                    <div key={id} className="posts-main">
-                      <img
-                        className="posts-main__img"
-                        src={img}
-                        alt="photo: post"
-                      />
-                      <h4 className="posts-main__title">{title}</h4>
-                      <span className="posts-main__span">{date}</span>
-                      <p className="posts-main__text">
-                        {text.lenght <= 700 ? text : text.substr(0, 700)}
-                        {!showMoreBtn && (
-                          <>
-                            <span>...</span>
-                            <button onClick={() => setShowMoreBtn(true)}>
-                              Читать дальше
-                            </button>
-                          </>
-                        )}
-                        {showMoreBtn && text.substr(700)}
-                      </p>
-                    </div>
-                  ))} */}
-      {/* {posts.slice(0, 1).map(({ id, title, img, text, date }) => (
-                  <div key={id} className="posts-main">
-                    <img
-                      className="posts-main__img"
-                      src={img}
-                      alt="photo: post"
-                    />
-                    <h4 className="posts-main__title">{title}</h4>
-                    <span className="posts-main__span">{date}</span>
-                    <p className="posts-main__text">
-                      {text.lenght <= 700 ? text : text.substr(0, 700)}
-                      {!showMoreBtn && (
-                        <>
-                          <span>...</span>
-                          <button onClick={() => setShowMoreBtn(true)}>
-                            Читать дальше
-                          </button>
-                        </>
-                      )}
-                      {showMoreBtn && text.substr(700)}
-                    </p>
-                  </div>
-                ))} */}
-      {/* <div className="posts-choice">
-                  {posts.map((posts, id) => (
-                    <PostItem key={id} posts={posts} />
-                  ))}
-                  {posts.slice(0, 4).map((posts, id) => (
-                    <PostItem key={id} posts={posts} />
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="contacts">
-              <div className="contacts-icon">
-                <Link
-                  href="https://t.me/mariagonzaaa"
-                  className="contacts-icon__item contacts-icon__telegram"
-                ></Link>
-                <Link
-                  href="https://instagram.com/gonzabutterfly?igshid=YmMyMTA2M2Y="
-                  className="contacts-icon__item contacts-icon__instagram"
-                ></Link>
-                <Link
-                  href="https://www.youtube.com/@mariagonzaa"
-                  className="contacts-icon__item contacts-icon__youtube"
-                ></Link>
-                <Link
-                  href="/"
-                  className="contacts-icon__item contacts-icon__vk"
-                ></Link>
-              </div>
-              <div className="contacts-target"></div>
-            </div>
-          </div>
-        </div>
-      </section> */}
+      {posts
+        .slice(0)
+        .reverse()
+        .map((post, id) => (
+          <Posts key={id} post={post} />
+        ))}
     </>
   );
 };

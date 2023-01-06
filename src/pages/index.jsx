@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Clip } from "../modules/Clip/Clip";
-import { Blog } from "../modules/Blog/Blog";
+import { Main } from "../modules/Main/Main";
 import { useIsLogin } from "../hooks/useIs";
 import { useIsLogged } from "../hooks/useIs";
 
@@ -17,7 +17,7 @@ export default function HomePage() {
         <link rel="icon" href="/icons-medium.png" />
       </Head>
       <Clip />
-      <Blog {...isLogin} {...isLogged} />
+      <Main {...isLogin} {...isLogged} />
     </>
   );
 }
