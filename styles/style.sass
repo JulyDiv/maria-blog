@@ -17,6 +17,9 @@ body
     width: 100%
     font-style: normal
     overflow: auto
+    background: linear-gradient(180deg, rgb(53, 0, 2) 11%, rgb(237, 242, 208) 87%, rgb(255, 255, 255) 100%)
+    color: $textColor
+    //background-color: $bgColor2
     //background-color: $bgColor
 
 img
@@ -47,9 +50,13 @@ button
     padding: 0
     font-family: inherit
     cursor: pointer
-    border: none
+    //border: none
     background-color: transparent
+    border-radius: $borderRadius
+    border: 2px solid $bgColor2
     +title
+    &:hover
+        box-shadow: $boxShadow
 
 button:focus
     border: none
@@ -58,10 +65,14 @@ button:focus
 input, textarea
     appearance: none !important
     padding: 0
-    border-radius: 0
-    border: none
+    //border-radius: 0
+    //border: none
     background-color: transparent
+    border-radius: $borderRadius
+    border: 2px solid $bgColor2
     +text
+    &:hover
+        box-shadow: $boxShadow
 
 input:focus, textarea:focus
     outline: none

@@ -38,6 +38,7 @@ export const Header = ({ setIsLogin, isLogged, isLogin, setIsLogged }) => {
           isLogged={isLogged}
           setIsLogin={setIsLogin}
           setIsLogged={setIsLogged}
+          setIsModalPost={setIsModalPost}
         />
       </header>
       {isLogin && <Login setIsLogin={setIsLogin} setIsLogged={setIsLogged} />}
@@ -49,7 +50,9 @@ export const Header = ({ setIsLogin, isLogged, isLogin, setIsLogged }) => {
         <div className={styles.block}>
           <button
             className={styles.button}
-            onClick={() => isModalPost ? setIsModalPost(false) : setIsModalPost(true)}
+            onClick={() =>
+              isModalPost ? setIsModalPost(false) : setIsModalPost(true)
+            }
             //onClick={() => setIsModalPost(true)}
           >
             {isModalPost ? "Закрыть панель" : "Открыть панель"}

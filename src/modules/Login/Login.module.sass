@@ -3,7 +3,7 @@
 .login
     display: flex
     justify-content: center
-    padding: 20px 0 0 0
+    padding: 50px 0 0 0
 .wrapper
     display: flex
     flex-direction: column
@@ -14,6 +14,7 @@
     box-shadow: $boxShadow
 .title
     margin: 0 0 20px 0
+    color: $bgColor2
 .form
     display: flex
     flex-direction: column
@@ -25,12 +26,20 @@
     width: 100%
     height: 30px
     border-radius: $borderRadius
-    border: 2px solid $colorCoffee
+    border: 2px solid $bgColor2
     font-size: 18px
+    color: $bgColor2
+    &:hover
+        box-shadow: $boxShadow
+    // &:active
+    //     background-color: inherit
 .button
     margin: auto
     width: 200px
     height: 50px
     font-size: 18px
-    border-radius: $borderRadius
-    border: 2px solid $colorCoffee
+    //border-radius: $borderRadius
+    //border: 2px solid $bgColor2
+    color: $bgColor2
+    //&:hover
+        //box-shadow: $boxShadow

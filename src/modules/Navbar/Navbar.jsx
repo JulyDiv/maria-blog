@@ -2,7 +2,20 @@ import React from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.sass";
 
-export const Navbar = ({ setIsLogin, isLogged, isLogin, setIsLogged }) => {
+export const Navbar = ({
+  setIsLogin,
+  isLogged,
+  isLogin,
+  setIsLogged,
+  setIsModalPost,
+}) => {
+  const onClick = () => {
+    setIsLogged(false);
+    setIsLogin(false);
+    setIsModalPost(false);
+    //isLogin ? setIsLogin(false) : setIsLogin(true);
+    //!isLogged ? setIsModalPost(false) : "";
+  };
   return (
     <>
       <nav className={styles.navbar}>
@@ -29,7 +42,7 @@ export const Navbar = ({ setIsLogin, isLogged, isLogin, setIsLogged }) => {
               <>
                 <button
                   className={styles.button}
-                  onClick={() => setIsLogged(false)}
+                  onClick={() => onClick()}
                 >
                   Я дома
                 </button>
@@ -37,7 +50,7 @@ export const Navbar = ({ setIsLogin, isLogged, isLogin, setIsLogged }) => {
             ) : (
               <button
                 className={styles.button}
-                onClick={() => setIsLogin(true)}
+                onClick={() => isLogin ? setIsLogin(false) : setIsLogin(true)}
               >
                 Моя кнопка
               </button>

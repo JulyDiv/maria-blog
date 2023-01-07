@@ -38,62 +38,89 @@ export const Main = ({ isLogged }) => {
             <span className={styles.top_line}></span>
           </div> */}
           <div className={styles.wrapper}>
-            <div
-              style={{
-                width: "500px",
-                height: "700px",
-                display: "flex",
-                justifyContent: "space-between",
-              }}
-            >ТУТ ЧТО-ТО ПРОИСХОДИТ...</div>
-            {/* <div
-              className={styles.posts}
-              style={{
-                width: "500px",
-                height: "700px",
-                display: "flex",
-                justifyContent: "space-between",
-              }}
-            >
-              <div>
-                <div>
-                    <div>img</div>
-                    <h5>title</h5>
-                    <p>date</p>
-                    <p>text</p>
+            <div className={styles.posts}>
+              <div className={styles.posts_wrapper}>
+                <div className={styles.item_top}>
+                  <img
+                    className={styles.img_top}
+                    src="/img/1.jpg"
+                    alt="photo"
+                  />
+                  <h5 className={styles.title_top}>Далеко-далеко</h5>
+                  <p className={styles.date_top}>7 января 2023г</p>
+                  <p className={styles.text_top}>
+                    Далеко-далеко, за словесными горами в стране гласных и
+                    согласных живут рыбные тексты. Скатился первую
+                    переписывается не рукопись, дорогу текст, предупредила ее
+                    свою текста щеке бросил лучше грустный свое имени напоивший
+                    города которое.
+                  </p>
                 </div>
-                <div style={{ display: "flex", width: "100px" }}>
-                  <div style={{ width: "50px" }}>
-                    <h5>title</h5>
-                    <p>date</p>
-                  </div>
-                  <div style={{ width: "50px" }}>
-                    <h5>title</h5>
-                    <p>date</p>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                  <div>
-                    <div>img</div>
-                    <h5>title</h5>
-                    <p>date</p>
-                    <p>text</p>
-                  </div>
-                <div style={{ display: "flex", width: "100px" }}>
-                  <div style={{ width: "50px" }}>
-                    <h5>title</h5>
-                    <p>date</p>
-                  </div>
-                  <div style={{ width: "50px" }}>
-                    <h5>title</h5>
-                    <p>date</p>
-                  </div>
+                <div className={styles.item_top}>
+                  <img
+                    className={styles.img_top}
+                    src="/img/1.jpg"
+                    alt="photo"
+                  />
+                  <h5 className={styles.title_top}>Далеко-далеко</h5>
+                  <p className={styles.date_top}>7 января 2023г</p>
+                  <p className={styles.text_top}>
+                    Далеко-далеко, за словесными горами в стране гласных и
+                    согласных живут рыбные тексты. Скатился первую
+                    переписывается не рукопись, дорогу текст, предупредила ее
+                    свою текста щеке бросил лучше грустный свое имени напоивший
+                    города которое.
+                  </p>
                 </div>
               </div>
 
-            </div> */}
+              <div className={styles.posts_wrapper}>
+                <div className={styles.item_bottom}>
+                  <img
+                    className={styles.img_bottom}
+                    src="/img/3.jpg"
+                    alt="photo"
+                  />
+                  <div className={styles.info}>
+                    <h5 className={styles.title_bottom}>Далеко-далеко</h5>
+                    <p className={styles.date_bottom}>7 января 2023г</p>
+                  </div>
+                </div>
+                <div className={styles.item_bottom}>
+                  <img
+                    className={styles.img_bottom}
+                    src="/img/3.jpg"
+                    alt="photo"
+                  />
+                  <div className={styles.info}>
+                    <h5 className={styles.title_bottom}>Далеко-далеко</h5>
+                    <p className={styles.date_bottom}>7 января 2023г</p>
+                  </div>
+                </div>
+                <div className={styles.item_bottom}>
+                  <img
+                    className={styles.img_bottom}
+                    src="/img/3.jpg"
+                    alt="photo"
+                  />
+                  <div className={styles.info}>
+                    <h5 className={styles.title_bottom}>Далеко-далеко</h5>
+                    <p className={styles.date_bottom}>7 января 2023г</p>
+                  </div>
+                </div>
+                <div className={styles.item_bottom}>
+                  <img
+                    className={styles.img_bottom}
+                    src="/img/3.jpg"
+                    alt="photo"
+                  />
+                  <div className={styles.info}>
+                    <h5 className={styles.title_bottom}>Далеко-далеко</h5>
+                    <p className={styles.date_bottom}>7 января 2023г</p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {/* <Posts posts={posts} showMoreBtn={showMoreBtn} setShowMoreBtn={setShowMoreBtn} /> */}
             <Contacts />

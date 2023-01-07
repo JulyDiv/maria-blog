@@ -22,7 +22,7 @@ export const Login = ({ setIsLogged, setIsLogin }) => {
       setIsLogged(true);
       reset();
     } else {
-      alert("Incorrect username and password");
+      setIsLogin(false);
     }
     setIsLogin(false);
   };
