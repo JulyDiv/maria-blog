@@ -4,7 +4,7 @@ import styles from "./Blog.module.sass";
 import axios from "axios";
 import { Posts } from "../Posts/Posts";
 
-export const Blog = ({ posts, setPosts }) => {
+export const Blog = ({ posts, setPosts, isLogged, setIsLogged }) => {
 
   const getData = async () => {
     return await axios
@@ -27,7 +27,7 @@ export const Blog = ({ posts, setPosts }) => {
         .slice(0)
         .reverse()
         .map((post, id) => (
-          <Posts key={id} post={post} />
+          <Posts key={id} post={post} isLogged={isLogged} />
         ))}
     </>
   );

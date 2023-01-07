@@ -2,10 +2,12 @@ import Head from "next/head";
 import { Blog } from "../../modules/Blog/Blog";
 import { Clip } from "../../modules/Clip/Clip";
 import { usePosts } from "../../hooks/usePosts";
+import { useIsLogged } from "../../hooks/useIs"
 
 export default function BlogPage() {
 
   const post = usePosts();
+  const isLogged = useIsLogged();
 
   return (
     <>
@@ -15,7 +17,7 @@ export default function BlogPage() {
         <link rel="icon" href="/icons-medium.png" />
       </Head>
       <Clip />
-      <Blog {...post} />
+      <Blog {...post} {...isLogged} />
     </>
   );
 }

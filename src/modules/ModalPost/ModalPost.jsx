@@ -21,18 +21,19 @@ export const ModalPost = ({ imgs, setImgs, setIsModalPost }) => {
       .catch(function (error) {
         console.log(error.message);
       });
+      setIsModalPost(false);
   };
-  const onDelete = (data) => {
-    console.log(data);
-    axios
-      .delete("https://broad-accidental-servant.glitch.me/posts")
-      .then(({ data }) => {
-        console.log(data);
-      })
-      .catch(function (error) {
-        console.log(error.message);
-      });
-  };
+  // const onDelete = (data) => {
+  //   console.log(data);
+  //   axios
+  //     .delete(`https://broad-accidental-servant.glitch.me/posts/${id}`)
+  //     .then(({ data }) => {
+  //       console.log(data);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error.message);
+  //     });
+  // };
   const handleSubmits = (e) => {
     let file = e.target.files[0];
     let reader = new FileReader();
@@ -89,8 +90,6 @@ export const ModalPost = ({ imgs, setImgs, setIsModalPost }) => {
               Свернуть панель
             </button>
           </form>
-          {/* <button onClick={() => onSubmit()}>GO</button> */}
-          {/* <button onClick={() => onDelete()}>Удалить пост</button> */}
         </div>
       </div>
     </>

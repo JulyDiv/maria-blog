@@ -1,9 +1,25 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import styles from "./Posts.module.sass";
+import axios from "axios";
 
-export const Posts = ({ post }) => {
+export const Posts = ({ post, isLogged }) => {
+
   const [showMoreBtn, setShowMoreBtn] = useState(false);
+
+    const onDelete = (data) => {
+      console.log(data);
+      axios
+        .delete(`https://broad-accidental-servant.glitch.me/posts/${post.id}`)
+        .then(({ data }) => {
+          console.log(data);
+        })
+        .catch(function (error) {
+          console.log(error.message);
+        });
+    };
+
+  console.log(post);
 
   return (
     <>
@@ -17,6 +33,9 @@ export const Posts = ({ post }) => {
                 alt="photo: post"
               />
               <div className={styles.block}>
+                <button className={""} onClick={() => onDelete()}>
+                  Удалить пост
+                </button>
                 <h4 className={styles.title}>{post.title}</h4>
                 <span className={styles.span}>{post.date}</span>
                 <p className={styles.text}>
@@ -26,7 +45,10 @@ export const Posts = ({ post }) => {
                   {!showMoreBtn && (
                     <>
                       <span>...</span>
-                      <button className={styles.button} onClick={() => setShowMoreBtn(true)}>
+                      <button
+                        className={styles.button}
+                        onClick={() => setShowMoreBtn(true)}
+                      >
                         Читать дальше
                       </button>
                     </>
