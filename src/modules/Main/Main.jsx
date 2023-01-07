@@ -31,14 +31,14 @@ export const Main = ({ isLogged }) => {
     <>
       <section className={styles.main}>
         <div className={`container`}>
-          {/* <div className={styles.top}>
-            <Link href="/blog" className={styles.top_span}>
-              GSR-блог
-            </Link>
-            <span className={styles.top_line}></span>
-          </div> */}
           <div className={styles.wrapper}>
             <div className={styles.posts}>
+              <div className={styles.top}>
+                <Link href="/blog" className={styles.top_span}>
+                  GSR-блог
+                </Link>
+                <span className={styles.top_line}></span>
+              </div>
               <div className={styles.posts_wrapper}>
                 <div className={styles.item_top}>
                   <img
