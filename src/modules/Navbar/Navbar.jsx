@@ -23,7 +23,7 @@ export const Navbar = ({
           <div className={styles.wrapper}>
             <div className={styles.link}>
               <Link href="/" className={styles.link_item}>
-                Обо мне
+                Главная
               </Link>
               <Link href="/" className={styles.link_item}>
                 Проекты
@@ -44,7 +44,7 @@ export const Navbar = ({
                   className={styles.button}
                   onClick={() => onClick()}
                 >
-                  Я дома
+                  
                 </button>
               </>
             ) : (
@@ -52,7 +52,7 @@ export const Navbar = ({
                 className={styles.button}
                 onClick={() => isLogin ? setIsLogin(false) : setIsLogin(true)}
               >
-                Моя кнопка
+                
               </button>
             )}
           </div>

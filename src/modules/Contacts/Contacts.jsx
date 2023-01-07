@@ -20,7 +20,16 @@ export const Contacts = () => {
               className={`${styles.icon_item} ${styles.icon_item_youtube}`}
             ></Link>
           </div>
-          <div className={styles.target}></div>
+          <div className={styles.target}>
+            <p
+              style={{
+                color: "#FFFFFF",
+                fontSize: "22px"
+              }}
+            >
+              Тут может быть твоя реклама
+            </p>
+          </div>
         </div>
       </>
     );

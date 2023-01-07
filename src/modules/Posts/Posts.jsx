@@ -26,7 +26,7 @@ export const Posts = ({ post }) => {
                   {!showMoreBtn && (
                     <>
                       <span>...</span>
-                      <button onClick={() => setShowMoreBtn(true)}>
+                      <button className={styles.button} onClick={() => setShowMoreBtn(true)}>
                         Читать дальше
                       </button>
                     </>

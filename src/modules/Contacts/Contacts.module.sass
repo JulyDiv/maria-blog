@@ -19,6 +19,8 @@
         background-position: center
         background-repeat: no-repeat
         background-color: $linePost
+        &:hover
+            box-shadow: $boxShadow
         &_telegram
             background-image: url("../../../public/img/telegram-white.svg")
             background-position: 40% 50%
@@ -27,6 +29,9 @@
         &_youtube
             background-image: url("../../../public/img/youtube-white.svg")
 .target
+    display: flex
+    justify-content: center
+    align-items: center
     width: 300px
     height: 400px
     background-color: $linePost
