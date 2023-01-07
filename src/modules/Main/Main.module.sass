@@ -24,6 +24,8 @@
         column-gap: 45px
         row-gap: 45px
 .item
+    &_wrapper
+        padding: 20px
     &_top
         border-radius: $borderRadius
         background-color: #efefef
@@ -37,16 +39,17 @@
         //box-shadow: $boxShadow
 .img
     &_top
-        margin-bottom: 20px
-        border-radius: $borderRadius
+        //margin-bottom: 20px
+        border-radius: 8px 8px 0 0
     &_bottom
         width: 50%
-        border-radius: $borderRadius
+        border-radius: 8px 0 0 8px
 .info
     padding: 10px 20px
     width: 100%
 .title
     &_top
+        margin: 0 0 20px 0
         font-size: 22px
     &_bottom
         font-size: 20px
@@ -55,6 +58,6 @@
         font-size: 18px
 .text
     &_top
-        padding: 20px 0px
+        padding: 20px 0px 0 0
         font-size: 18px
-        line-height: 19px
+        line-height: 22px
