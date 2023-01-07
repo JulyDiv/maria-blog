@@ -12,6 +12,7 @@ export const Header = ({ setIsLogin, isLogged, isLogin, setIsLogged }) => {
   //const [date, setDate] = useState("");
   const [isModalPost, setIsModalPost] = useState(false);
   const [imgs, setImgs] = useState("");
+  //console.log(isLogged);
   return (
     <>
       <header className={styles.header}>

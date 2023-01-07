@@ -19,7 +19,7 @@ export const Posts = ({ post, isLogged }) => {
         });
     };
 
-  console.log(post);
+  //console.log(post);
 
   return (
     <>
@@ -33,9 +33,11 @@ export const Posts = ({ post, isLogged }) => {
                 alt="photo: post"
               />
               <div className={styles.block}>
-                <button className={""} onClick={() => onDelete()}>
-                  Удалить пост
-                </button>
+                {!isLogged && (
+                  <button className={""} onClick={() => onDelete()}>
+                    Удалить пост
+                  </button>
+                )}
                 <h4 className={styles.title}>{post.title}</h4>
                 <span className={styles.span}>{post.date}</span>
                 <p className={styles.text}>
@@ -60,6 +62,43 @@ export const Posts = ({ post, isLogged }) => {
           </div>
         </div>
       </div>
+      {/* <div className={styles.posts}>
+        <div className={`container`}>
+          <div className={styles.wrapper}>
+            <div key={post.id} className={styles.main}>
+              <img
+                className={styles.main_img}
+                src={post.img}
+                alt="photo: post"
+              />
+              <div className={styles.block}>
+                {isLogged && <button className={""} onClick={() => onDelete()}>
+                  Удалить пост
+                </button>}
+                <h4 className={styles.title}>{post.title}</h4>
+                <span className={styles.span}>{post.date}</span>
+                <p className={styles.text}>
+                  {post.text.length <= 700
+                    ? post.text
+                    : post.text.substr(0, 700)}
+                  {!showMoreBtn && (
+                    <>
+                      <span>...</span>
+                      <button
+                        className={styles.button}
+                        onClick={() => setShowMoreBtn(true)}
+                      >
+                        Читать дальше
+                      </button>
+                    </>
+                  )}
+                  {showMoreBtn && post.text.substr(700)}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
     </>
   );
 };

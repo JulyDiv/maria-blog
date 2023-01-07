@@ -1,13 +1,25 @@
 import Head from "next/head";
+import { useState } from "react";
 import { Blog } from "../../modules/Blog/Blog";
 import { Clip } from "../../modules/Clip/Clip";
 import { usePosts } from "../../hooks/usePosts";
-import { useIsLogged } from "../../hooks/useIs"
+import { useIsLoading, useIsLogged } from "../../hooks/useIs";
+//import { Pagination } from "../../modules/Pagination/Pagination";
+//import { useEffect } from "react";
+//import axios from "axios";
 
 export default function BlogPage() {
 
   const post = usePosts();
   const isLogged = useIsLogged();
+  const isLoading = useIsLoading();
+
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [postPerPage, setPostPerPage] = useState(2);
+
+  // const lastPostIndex = currentPage * postPerPage;
+  // const firstPostIndex = lastPostIndex - postPerPage;
+  // const currentPost = post.posts.slice(firstPostIndex, lastPostIndex);
 
   return (
     <>
@@ -17,7 +29,7 @@ export default function BlogPage() {
         <link rel="icon" href="/icons-medium.png" />
       </Head>
       <Clip />
-      <Blog {...post} {...isLogged} />
+      <Blog {...post} {...isLogged} {...isLoading} />
     </>
   );
 }
