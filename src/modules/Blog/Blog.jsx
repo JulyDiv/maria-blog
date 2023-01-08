@@ -17,6 +17,7 @@ export const Blog = ({
 
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(2);
+  //const [pageNumbers, setPageNumbers] = useState([]);
 
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
@@ -32,6 +33,13 @@ export const Blog = ({
   const prevPage = () => {
     setCurrentPage((prev) => prev - 1);
   };
+
+  const totalPosts = posts.length;
+  const postCount = Math.ceil(totalPosts / postPerPage);
+  const pageNumbers = [];
+  for (let i = 1; i <= postCount; i++) {
+    pageNumbers.push(i);
+  }
 
   // if(isLoading) {
   //   return <h1>Loading...</h1>
@@ -58,29 +66,21 @@ export const Blog = ({
     return <h1>Loading...</h1>;
   }
 
-  console.log(reversePost);
-
   return (
     <>
-      {currentPost
-        // .slice(0)
-        // .reverse()
-        .map((post, id) => (
-          <Posts key={id} post={post} isLogged={isLogged} />
-        ))}
-      {/* {posts
-        .slice(0)
-        .reverse()
-        .map((post, id) => (
-          <Posts key={id} post={post} isLogged={isLogged} />
-        ))} */}
       <Pagination
         postPerPage={postPerPage}
-        totalPosts={posts.length}
+        totalPosts={totalPosts}
         onPagination={onPagination}
+        pageNumbers={pageNumbers}
       />
-      <button onClick={() => prevPage()}>Prev</button>
-      <button onClick={() => nextPage()}>Next</button>
+      {currentPage > 1 && <button onClick={() => prevPage()}>Prev</button>}
+      {postCount > currentPage && (
+        <button onClick={() => nextPage()}>Next</button>
+      )}
+      {currentPost.map((post, id) => (
+        <Posts key={id} post={post} isLogged={isLogged} />
+      ))}
     </>
   );
 };
