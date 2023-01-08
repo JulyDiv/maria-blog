@@ -3,11 +3,13 @@ import { Clip } from "../modules/Clip/Clip";
 import { Main } from "../modules/Main/Main";
 import { useIsLogin } from "../hooks/useIs";
 import { useIsLogged } from "../hooks/useIs";
+import { usePosts} from "../hooks/usePosts";
 
 export default function HomePage() {
 
   const isLogin = useIsLogin();
   const isLogged = useIsLogged();
+  const post = usePosts();
 
   return (
     <>
@@ -17,7 +19,7 @@ export default function HomePage() {
         <link rel="icon" href="/icons-medium.png" />
       </Head>
       <Clip />
-      <Main {...isLogin} {...isLogged} />
+      <Main {...isLogin} {...isLogged} {...post} />
     </>
   );
 }
