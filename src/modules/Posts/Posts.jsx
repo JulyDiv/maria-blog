@@ -4,20 +4,19 @@ import styles from "./Posts.module.sass";
 import axios from "axios";
 
 export const Posts = ({ post, isLogged }) => {
-
   const [showMoreBtn, setShowMoreBtn] = useState(false);
 
-    const onDelete = (data) => {
-      console.log(data);
-      axios
-        .delete(`https://broad-accidental-servant.glitch.me/posts/${post.id}`)
-        .then(({ data }) => {
-          console.log(data);
-        })
-        .catch(function (error) {
-          console.log(error.message);
-        });
-    };
+  const onDelete = (data) => {
+    console.log(data);
+    axios
+      .delete(`https://broad-accidental-servant.glitch.me/posts/${post.id}`)
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      });
+  };
 
   //console.log(post);
 
@@ -41,21 +40,25 @@ export const Posts = ({ post, isLogged }) => {
                 <h4 className={styles.title}>{post.title}</h4>
                 <span className={styles.span}>{post.date}</span>
                 <p className={styles.text}>
-                  {post.text.length <= 700
-                    ? post.text
-                    : post.text.substr(0, 700)}
-                  {!showMoreBtn && (
+                  {post.text.length <= 700 ? (
+                    post.text
+                  ) : (
                     <>
-                      <span>...</span>
-                      <button
-                        className={styles.button}
-                        onClick={() => setShowMoreBtn(true)}
-                      >
-                        Читать дальше
-                      </button>
+                      {post.text.substr(0, 700)}
+                      {!showMoreBtn && (
+                        <>
+                          <span>...</span>
+                          <button
+                            className={styles.button}
+                            onClick={() => setShowMoreBtn(true)}
+                          >
+                            Читать дальше
+                          </button>
+                        </>
+                      )}
+                      {showMoreBtn && post.text.substr(700)}
                     </>
                   )}
-                  {showMoreBtn && post.text.substr(700)}
                 </p>
               </div>
             </div>

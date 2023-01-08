@@ -3,7 +3,7 @@ import { Clip } from "../modules/Clip/Clip";
 import { Main } from "../modules/Main/Main";
 import { useIsLogin } from "../hooks/useIs";
 import { useIsLogged } from "../hooks/useIs";
-import { usePosts} from "../hooks/usePosts";
+import { usePosts } from "../hooks/usePosts";
 
 export default function HomePage() {
 

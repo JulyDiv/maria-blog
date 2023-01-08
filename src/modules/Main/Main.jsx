@@ -9,14 +9,15 @@ import { ModalPost } from "../ModalPost/ModalPost";
 import { Posts } from "../Posts/Posts";
 import { Contacts } from "../Contacts/Contacts";
 import { MainPost } from "../MainPost/MainPost";
+import { MainLastPost } from "../MainLastPost/MainLastPost";
 
 export const Main = ({ isLogged, posts, setPosts }) => {
-  //const [filter, setFilter] = useState([]);
+  //const [posts, setPosts] = useState([]);
   //const [showMoreBtn, setShowMoreBtn] = useState(false);
 
   const getData = async () => {
     return await axios
-      .get("https://broad-accidental-servant.glitch.me/posts")
+      .get("https://broad-accidental-servant.glitch.me/posts", {})
       .then(({ data }) => {
         setPosts(data);
       })
@@ -42,20 +43,11 @@ export const Main = ({ isLogged, posts, setPosts }) => {
                 <span className={styles.top_line}></span>
               </div>
               <div className={styles.posts_wrapper}>
-                {posts
-                  .slice(-2)
-                  .reverse()
-                  .map(({ id, title, text, date, img }) => (
-                    <div key={id} className={styles.item_top}>
-                      <img className={styles.img_top} src={img} alt="photo" />
-                      <div className={styles.item_wrapper}>
-                        <h5 className={styles.title_top}>{title}</h5>
-                        <p className={styles.date_top}>{date}</p>
-                        <p className={styles.text_top}>{text}</p>
-                      </div>
-                    </div>
-                  ))}
+                {posts.slice(-2).reverse().map((post, id) => (
+                  <MainLastPost key={id} post={post} />
+                ))}
               </div>
+
               <div className={styles.posts_wrapper}>
                 <MainPost posts={posts} />
               </div>
