@@ -26,6 +26,40 @@ export const Login = ({ setIsLogged, setIsLogin }) => {
     }
   };
 
+  // useEffect(() => {
+  //   const logins = localStorage.logins ? JSON.parse(localStorage.logins) : [];
+  //   if (logins !== null) {
+  //     setLogins(logins);
+  //   }
+  // }, [setLogins]);
+  // useEffect(() => {
+  //   window.addEventListener("beforeunload", () => {
+  //     localStorage.logins = JSON.stringify(logins);
+  //   });
+  //   return () => {
+  //     window.removeEventListener("beforeunload", () => {
+  //       localStorage.logins = JSON.stringify(logins);
+  //     });
+  //   };
+  // }, [logins]);
+
+  //   useEffect(() => {
+  //     const passwords = localStorage.passwords ? JSON.parse(localStorage.passwords) : [];
+  //     if (passwords !== null) {
+  //       setPasswords(passwords);
+  //     }
+  //   }, [setPasswords]);
+  //   useEffect(() => {
+  //     window.addEventListener("beforeunload", () => {
+  //       localStorage.passwords = JSON.stringify(passwords);
+  //     });
+  //     return () => {
+  //       window.removeEventListener("beforeunload", () => {
+  //         localStorage.passwords = JSON.stringify(passwords);
+  //       });
+  //     };
+  //   }, [passwords]);
+
   return (
     <>
       <div className={styles.login}>

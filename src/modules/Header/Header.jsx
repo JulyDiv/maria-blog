@@ -5,14 +5,15 @@ import styles from "./Header.module.sass";
 import { Login } from "../Login/Login";
 import { ModalPost } from "../ModalPost/ModalPost";
 import { Navbar } from "../Navbar/Navbar";
+import { AppContext } from "../../context/AppContext";
+import { useContext } from "react";
 
-export const Header = ({ setIsLogin, isLogged, isLogin, setIsLogged }) => {
-  //const [title, setTitle] = useState("");
-  //const [text, setText] = useState("");
-  //const [date, setDate] = useState("");
+export const Header = ({ setIsLogin, isLogin }) => {
+
   const [isModalPost, setIsModalPost] = useState(false);
   const [imgs, setImgs] = useState("");
-  //console.log(isLogged);
+
+  const { isLogged, setIsLogged } = useContext(AppContext);
   return (
     <>
       <header className={styles.header}>

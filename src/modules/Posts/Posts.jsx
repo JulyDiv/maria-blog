@@ -1,15 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./Posts.module.sass";
 import axios from "axios";
 import { ModalPost } from "../ModalPost/ModalPost";
+import { AppContext } from "../../context/AppContext";
 
-export const Posts = ({ post, isLogged, setPosts, posts, getData, isLoading, setIsLoading }) => {
+export const Posts = ({ post, setPosts, posts, getData, isLoading, setIsLoading }) => {
+
   const [showMoreBtn, setShowMoreBtn] = useState(false);
   const [isModalPostEdit, setIsModalPostEdit] = useState(false);
   const [title, setTitle] = useState(post.title);
   const [date, setDate] = useState(post.date);
   const [text, setText] = useState(post.text);
+
+  const { isLogged } = useContext(AppContext);
 
   const onDelete = (data) => {
     console.log(data);
@@ -43,7 +47,7 @@ export const Posts = ({ post, isLogged, setPosts, posts, getData, isLoading, set
                 alt="photo: post"
               />
               <div className={styles.block}>
-                {!isLogged && (
+                {isLogged && (
                   <>
                     <button className={""} onClick={() => onDelete()}>
                       Удалить пост
