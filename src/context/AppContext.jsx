@@ -8,8 +8,6 @@ const AppWrapper = ({ children }) => {
 
   const [logins, setLogins] = useState(process.env.NEXT_PUBLIC_LOGIN);
   const [passwords, setPasswords] = useState(process.env.NEXT_PUBLIC_PASSWORD);
-  console.log(logins);
-  console.log(passwords);
 
   const [isLogged, setIsLogged] = useState("");
 

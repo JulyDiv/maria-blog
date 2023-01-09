@@ -14,6 +14,8 @@ export const Blog = ({
   setIsLoading,
 }) => {
 
+  const [btnBottom, setBtnBottom] = useState(true);
+
   const reversePost = posts.slice(0).reverse();
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -58,34 +60,77 @@ export const Blog = ({
     getData();
   }, []);
 
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  }
+  // if (isLoading) {
+  //   return <h1 style={{ display: "flex", justifyContent: "center" }}>Загрузка постов...</h1>;
+  // }
 
   return (
     <>
-      <Pagination
-        postPerPage={postPerPage}
-        totalPosts={totalPosts}
-        onPagination={onPagination}
-        pageNumbers={pageNumbers}
-      />
-      {currentPage > 1 && <button onClick={() => prevPage()}>Prev</button>}
-      {postCount > currentPage && (
-        <button onClick={() => nextPage()}>Next</button>
-      )}
-      {currentPost.map((post, id) => (
-        <Posts
-          key={id}
-          post={post}
-          isLogged={isLogged}
-          setPosts={setPosts}
-          posts={posts}
-          getData={getData}
-          isLoading={isLoading}
-          setIsLoading={setIsLoading}
-        />
-      ))}
+      <section className={styles.blog}>
+        {isLoading ? (
+          <h1 style={{ display: "flex", justifyContent: "center" }}>
+            Загрузка постов...
+          </h1>
+        ) : (
+          <>
+            <div className={`${styles.block} ${styles.block_top}`}>
+              {currentPage > 1 && (
+                <button className={styles.button} onClick={() => prevPage()}>
+                  Предыдущие
+                </button>
+              )}
+              <Pagination
+                postPerPage={postPerPage}
+                totalPosts={totalPosts}
+                onPagination={onPagination}
+                pageNumbers={pageNumbers}
+              />
+              {postCount > currentPage && (
+                <button className={styles.button} onClick={() => nextPage()}>
+                  Далее
+                </button>
+              )}
+            </div>
+            {currentPost.map((post, id) => (
+              <Posts
+                key={id}
+                post={post}
+                isLogged={isLogged}
+                setPosts={setPosts}
+                posts={posts}
+                getData={getData}
+                isLoading={isLoading}
+                setIsLoading={setIsLoading}
+              />
+            ))}
+            <div className={`${styles.block} ${styles.block_bottom}`}>
+              {currentPage > 1 && (
+                <button
+                  className={styles.button}
+                  onClick={() => prevPage()}
+                >
+                  Предыдущие
+                </button>
+              )}
+              <Pagination
+                postPerPage={postPerPage}
+                totalPosts={totalPosts}
+                onPagination={onPagination}
+                pageNumbers={pageNumbers}
+                btnBottom={btnBottom}
+              />
+              {postCount > currentPage && (
+                <button
+                  className={styles.button}
+                  onClick={() => nextPage()}
+                >
+                  Далее
+                </button>
+              )}
+            </div>
+          </>
+        )}
+      </section>
     </>
   );
 };

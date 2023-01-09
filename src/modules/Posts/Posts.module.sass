@@ -7,6 +7,11 @@
     justify-content: center
     //flex-direction: column-reverse
     //margin: auto
+.button
+    width: 200px
+    border: 2px solid $linePost
+    &:hover
+        box-shadow: 1px 0px 10px 3px rgba(53, 0, 2, 0.51)
 .main
     //padding: 0 20px
     width: 60%
@@ -28,6 +33,12 @@
         //width: 600px
 .block
     padding: 30px
+    &_button
+        display: flex
+        justify-content: center
+        justify-content: space-between
+        margin: auto
+        width: 50%
 .title
     margin-bottom: 20px
     font-size: 20px
@@ -45,4 +56,6 @@
     +link
 .button
     padding: 5px 10px
-    border: none
+    border: 2px solid $linePost
+    &:hover
+        box-shadow: 1px 0px 10px 3px rgba(53, 0, 2, 0.51)
