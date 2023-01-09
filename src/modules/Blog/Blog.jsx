@@ -13,6 +13,8 @@ export const Blog = ({
   isLoading,
   setIsLoading,
 }) => {
+
+  //const [isModalPostEdit, setIsModalPostEdit] = useState(false);
   const reversePost = posts.slice(0).reverse();
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -79,7 +81,16 @@ export const Blog = ({
         <button onClick={() => nextPage()}>Next</button>
       )}
       {currentPost.map((post, id) => (
-        <Posts key={id} post={post} isLogged={isLogged} />
+        <Posts
+          key={id}
+          post={post}
+          isLogged={isLogged}
+          setPosts={setPosts}
+          posts={posts}
+          getData={getData}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+        />
       ))}
     </>
   );

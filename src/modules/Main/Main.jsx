@@ -4,16 +4,11 @@ import React, { useState, useEffect } from "react";
 import styles from "./Main.module.sass";
 import Link from "next/link";
 import axios from "axios";
-import { PostItem } from "../PostItem/PostItem";
-import { ModalPost } from "../ModalPost/ModalPost";
-import { Posts } from "../Posts/Posts";
 import { Contacts } from "../Contacts/Contacts";
 import { MainPost } from "../MainPost/MainPost";
 import { MainLastPost } from "../MainLastPost/MainLastPost";
 
 export const Main = ({ isLogged, posts, setPosts }) => {
-  //const [posts, setPosts] = useState([]);
-  //const [showMoreBtn, setShowMoreBtn] = useState(false);
 
   const getData = async () => {
     return await axios

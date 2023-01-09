@@ -12,7 +12,7 @@ export const MainLastPost = ({ post }) => {
         <div className={styles.item_wrapper}>
           <h5 className={styles.title_top}>{post.title}</h5>
           <p className={styles.date_top}>{post.date}</p>
-          <p className={styles.text_top}>
+          {post.text ? <p className={styles.text_top}>
             {post.text.length <= 200 ? (
               post.text
             ) : (
@@ -32,7 +32,7 @@ export const MainLastPost = ({ post }) => {
                 {showMoreBtn && post.text.substr(200)}
               </>
             )}
-          </p>
+          </p> : ""}
         </div>
       </div>
     </>

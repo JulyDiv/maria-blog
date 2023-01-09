@@ -3,37 +3,61 @@ import styles from "./ModalPost.module.sass";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
-export const ModalPost = ({ imgs, setImgs, setIsModalPost }) => {
-  const { register, handleSubmit } = useForm();
+export const ModalPost = ({
+  imgs,
+  setImgs,
+  setIsModalPost,
+  isModalPostEdit,
+  setIsModalPostEdit,
+  title,
+  text,
+  date,
+  setPosts,
+  posts,
+  post,
+  getData,
+}) => {
+  const { register, handleSubmit } = useForm({
+    defaultValues: { title: title, date: date, text: text },
+  });
 
   const onSubmit = (data) => {
     const { title, text, date } = data;
-    axios
-      .post("https://broad-accidental-servant.glitch.me/posts", {
-        img: imgs,
-        title: title,
-        date: date,
-        text: text,
-      })
-      .then(({ data }) => {
-        console.log(data);
-      })
-      .catch(function (error) {
-        console.log(error.message);
-      });
+    if (isModalPostEdit) {
+      const postId = { ...post };
+      axios
+        .put(`https://broad-accidental-servant.glitch.me/posts/${postId.id}`, {
+          img: imgs,
+          title: title,
+          date: date,
+          text: text,
+        })
+        .then(({ data }) => {
+          console.log(data);
+          getData();
+        })
+        .catch(function (error) {
+          console.log(error.message);
+        });
+      setIsModalPostEdit(false);
+    } else {
+      axios
+        .post("https://broad-accidental-servant.glitch.me/posts", {
+          img: imgs,
+          title: title,
+          date: date,
+          text: text,
+        })
+        .then(({ data }) => {
+          console.log(data);
+        })
+        .catch(function (error) {
+          console.log(error.message);
+        });
       setIsModalPost(false);
+    }
   };
-  // const onDelete = (data) => {
-  //   console.log(data);
-  //   axios
-  //     .delete(`https://broad-accidental-servant.glitch.me/posts/${id}`)
-  //     .then(({ data }) => {
-  //       console.log(data);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error.message);
-  //     });
-  // };
+
   const handleSubmits = (e) => {
     let file = e.target.files[0];
     let reader = new FileReader();
@@ -72,7 +96,7 @@ export const ModalPost = ({ imgs, setImgs, setIsModalPost }) => {
                 className={styles.textarea}
                 placeholder="Пост"
               />
-              <label className={styles.label} htmlFor="input_file">
+              {isModalPostEdit ? "" : <label className={styles.label} htmlFor="input_file">
                 <input
                   {...register("img")}
                   type="file"
@@ -81,12 +105,15 @@ export const ModalPost = ({ imgs, setImgs, setIsModalPost }) => {
                   id="input_file"
                 />
                 {imgs ? "Картинка готова!" : "Выбери картинку"}
-              </label>
+              </label>}
             </div>
             <button className={styles.button} type="submit">
-              Добавить пост
+              {isModalPostEdit ? "Редактировать пост" : "Добавить пост"}
             </button>
-            <button className={styles.button} onClick={() => setIsModalPost(false)}>
+            <button
+              className={styles.button}
+              onClick={() => setIsModalPost(false)}
+            >
               Свернуть панель
             </button>
           </form>
