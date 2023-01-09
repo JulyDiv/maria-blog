@@ -27,7 +27,6 @@ export const ModalPost = ({
       const postId = { ...post };
       axios
         .put(`https://broad-accidental-servant.glitch.me/posts/${postId.id}`, {
-          img: imgs,
           title: title,
           date: date,
           text: text,
@@ -42,7 +41,7 @@ export const ModalPost = ({
       setIsModalPostEdit(false);
     } else {
       axios
-        .post("https://broad-accidental-servant.glitch.me/posts", {
+        .post(`https://broad-accidental-servant.glitch.me/posts`, {
           img: imgs,
           title: title,
           date: date,

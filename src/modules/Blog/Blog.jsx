@@ -50,7 +50,7 @@ export const Blog = ({
   const getData = async () => {
     setIsLoading(true);
     return await axios
-      .get("https://broad-accidental-servant.glitch.me/posts", {})
+      .get(`https://broad-accidental-servant.glitch.me/posts`, {})
       .then(({ data }) => {
         setPosts(data);
         setIsLoading(false);

@@ -11,10 +11,6 @@ export const Posts = ({ post, isLogged, setPosts, posts, getData, isLoading, set
   const [date, setDate] = useState(post.date);
   const [text, setText] = useState(post.text);
 
-    // if (isLoading) {
-    //   return <h1>Loading Posts...</h1>;
-    // }
-
   const onDelete = (data) => {
     console.log(data);
     axios
@@ -32,8 +28,6 @@ export const Posts = ({ post, isLogged, setPosts, posts, getData, isLoading, set
   const onEdit = () => {
     setIsModalPostEdit(true);
   };
-
-  const onSubmitEdit = () => {};
 
   //console.log(post);
 
