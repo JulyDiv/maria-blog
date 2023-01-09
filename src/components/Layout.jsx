@@ -6,7 +6,7 @@ import { Header } from "../modules/Header/Header";
 
 export const Layout = ({ children }) => {
   const isLogin = useIsLogin();
-  //const isLogged = useIsLogged();
+  const isLogged = useIsLogged();
   return (
     <>
       <Header {...isLogin} />

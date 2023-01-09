@@ -26,7 +26,7 @@ export const ModalPost = ({
     if (isModalPostEdit) {
       const postId = { ...post };
       axios
-        .put(`https://broad-accidental-servant.glitch.me/posts/${postId.id}`, {
+        .put(`${process.env.NEXT_PUBLIC_API_HOST}/posts/${postId.id}`, {
           title: title,
           date: date,
           text: text,
@@ -41,7 +41,7 @@ export const ModalPost = ({
       setIsModalPostEdit(false);
     } else {
       axios
-        .post(`https://broad-accidental-servant.glitch.me/posts`, {
+        .post(`${process.env.NEXT_PUBLIC_API_HOST}/posts`, {
           img: imgs,
           title: title,
           date: date,
@@ -49,6 +49,7 @@ export const ModalPost = ({
         })
         .then(({ data }) => {
           console.log(data);
+          window.location.reload();
         })
         .catch(function (error) {
           console.log(error.message);

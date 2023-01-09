@@ -18,7 +18,7 @@ export const Posts = ({ post, setPosts, posts, getData, isLoading, setIsLoading 
   const onDelete = (data) => {
     console.log(data);
     axios
-      .delete(`https://broad-accidental-servant.glitch.me/posts/${post.id}`)
+      .delete(`${process.env.NEXT_PUBLIC_API_HOST}/posts/${post.id}`)
       .then(({ data }) => {
         console.log(data);
         getData();

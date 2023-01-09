@@ -7,16 +7,13 @@ export const Login = ({ setIsLogged, setIsLogin }) => {
 
   const [error, setError] = useState(false)
   const { logins, passwords } = useContext(AppContext);
-  // const [logins, setLogins] = useState(`${process.env.NEXT_PUBLIC_LOGIN}`);
-  // const [passwords, setPasswords] = useState(`${process.env.NEXT_PUBLIC_PASSWORD}`);
 
   const {
     register,
     handleSubmit,
-    reset
   } = useForm({
     mode: "onBlur" });
-//if (login === logins && password === passwords)
+
   const onSubmit = (data) => {
     const { login, password } = data;
     if (login === logins && password === passwords) {
@@ -24,7 +21,6 @@ export const Login = ({ setIsLogged, setIsLogin }) => {
       setIsLogin(false);
       localStorage.setItem("logins", JSON.stringify(logins));
       localStorage.setItem("passwords", JSON.stringify(passwords));
-      //reset();
     } else {
       setError(true);
     }

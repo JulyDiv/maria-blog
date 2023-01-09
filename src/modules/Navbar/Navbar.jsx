@@ -10,20 +10,10 @@ export const Navbar = ({
   setIsModalPost,
 }) => {
   const onClick = () => {
-    setIsLogged(
-      localStorage.clear()
-      );
-      //localStorage.clear();
-      window.location.reload();
+    setIsLogged(localStorage.clear());
+    window.location.reload();
     setIsLogin(false);
     setIsModalPost(false);
-    
-    // setIsLogged(false);
-    // setIsLogin(false);
-    // setIsModalPost(false);
-
-    //isLogin ? setIsLogin(false) : setIsLogin(true);
-    //!isLogged ? setIsModalPost(false) : "";
   };
   return (
     <>

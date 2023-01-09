@@ -14,12 +14,10 @@ export const Blog = ({
   setIsLoading,
 }) => {
 
-  //const [isModalPostEdit, setIsModalPostEdit] = useState(false);
   const reversePost = posts.slice(0).reverse();
 
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(2);
-  //const [pageNumbers, setPageNumbers] = useState([]);
 
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
@@ -43,14 +41,10 @@ export const Blog = ({
     pageNumbers.push(i);
   }
 
-  // if(isLoading) {
-  //   return <h1>Loading...</h1>
-  // }
-
   const getData = async () => {
     setIsLoading(true);
     return await axios
-      .get(`https://broad-accidental-servant.glitch.me/posts`, {})
+      .get(`${process.env.NEXT_PUBLIC_API_HOST}/posts`)
       .then(({ data }) => {
         setPosts(data);
         setIsLoading(false);
