@@ -3,10 +3,13 @@ import { createContext, useState, useEffect } from "react";
 const AppContext = createContext();
 
 const AppWrapper = ({ children }) => {
-  const [logins, setLogins] = useState(`${process.env.NEXT_PUBLIC_LOGIN}`);
-  const [passwords, setPasswords] = useState(
-    `${process.env.NEXT_PUBLIC_PASSWORD}`
-  );
+  //const [logins, setLogins] = useState(`${process.env.NEXT_PUBLIC_LOGIN}`);
+  //const [passwords, setPasswords] = useState(`${process.env.NEXT_PUBLIC_PASSWORD}`);
+  //const env = process.env;
+  const [logins, setLogins] = useState(process.env.NEXT_PUBLIC_LOGIN);
+  const [passwords, setPasswords] = useState(process.env.NEXT_PUBLIC_PASSWORD);
+  console.log(logins);
+  console.log(passwords);
 
   const [isLogged, setIsLogged] = useState("");
 
