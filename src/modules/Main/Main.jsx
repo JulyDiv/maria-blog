@@ -39,7 +39,9 @@ export const Main = ({ isLogged, posts, setPosts }) => {
               </div>
               <div className={styles.posts_wrapper}>
                 {posts.slice(-2).reverse().map((post, id) => (
-                  <MainLastPost key={id} post={post} />
+                  <div key={id}>
+                    <MainLastPost  post={post} />
+                  </div>
                 ))}
               </div>
 
