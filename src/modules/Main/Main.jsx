@@ -48,6 +48,8 @@ export const Main = ({ isLogged, posts, setPosts }) => {
               <div className={styles.posts_wrapper}>
                 <MainPost posts={posts} />
               </div>
+              <div className={styles.block}>
+              <Link href="/blog" className={styles.link}>Перейти в GSR-блог</Link></div>
             </div>
             <Contacts />
           </div>
