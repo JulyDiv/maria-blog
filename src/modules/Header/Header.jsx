@@ -44,10 +44,6 @@ export const Header = ({ setIsLogin, isLogin }) => {
         />
       </header>
       {isLogin && <Login setIsLogin={setIsLogin} setIsLogged={setIsLogged} />}
-      {/* <ModalPost
-        imgs={imgs}
-        setImgs={setImgs}
-      /> */}
       {isLogged ? (
         <div className={styles.block}>
           <button
@@ -70,12 +66,6 @@ export const Header = ({ setIsLogin, isLogin }) => {
           setIsModalPost={setIsModalPost}
         />
       )}
-      {/* {isLogged && (
-        <ModalPost
-          imgs={imgs}
-          setImgs={setImgs}
-        />
-      )} */}
     </>
   );
 };

@@ -6,7 +6,7 @@ import { useIsLogged } from "../hooks/useIs";
 function MyApp({ Component, pageProps }) {
   const isLogged = useIsLogged();
   return (
-    <AppWrapper {...isLogged}>
+    <AppWrapper>
       <Layout>
         <Component {...pageProps} />
       </Layout>

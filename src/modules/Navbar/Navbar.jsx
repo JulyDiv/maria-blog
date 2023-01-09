@@ -10,9 +10,18 @@ export const Navbar = ({
   setIsModalPost,
 }) => {
   const onClick = () => {
-    setIsLogged(false);
+    setIsLogged(
+      localStorage.clear()
+      );
+      //localStorage.clear();
+      window.location.reload();
     setIsLogin(false);
     setIsModalPost(false);
+    
+    // setIsLogged(false);
+    // setIsLogin(false);
+    // setIsModalPost(false);
+
     //isLogin ? setIsLogin(false) : setIsLogin(true);
     //!isLogged ? setIsModalPost(false) : "";
   };
@@ -44,7 +53,7 @@ export const Navbar = ({
                   className={styles.button}
                   onClick={() => onClick()}
                 >
-                  
+                  Logout
                 </button>
               </>
             ) : (
@@ -52,7 +61,7 @@ export const Navbar = ({
                 className={styles.button}
                 onClick={() => isLogin ? setIsLogin(false) : setIsLogin(true)}
               >
-                
+                Login
               </button>
             )}
           </div>
