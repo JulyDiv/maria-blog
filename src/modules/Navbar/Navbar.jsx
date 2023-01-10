@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.sass";
+import { useRouter } from "next/router";
 
 export const Navbar = ({
   setIsLogin,
@@ -15,6 +16,14 @@ export const Navbar = ({
     setIsLogin(false);
     setIsModalPost(false);
   };
+
+  const router = useRouter();
+
+  // const handleOnClick = (e) => {
+  //   e.preventDefault();
+  //   router.push("/");
+  // }
+
   return (
     <>
       <nav className={styles.navbar}>

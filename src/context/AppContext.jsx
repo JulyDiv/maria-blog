@@ -3,11 +3,10 @@ import { createContext, useState, useEffect } from "react";
 const AppContext = createContext();
 
 const AppWrapper = ({ children }) => {
-  //const [logins, setLogins] = useState(`${process.env.NEXT_PUBLIC_LOGIN}`);
-  //const [passwords, setPasswords] = useState(`${process.env.NEXT_PUBLIC_PASSWORD}`);
 
   const [logins, setLogins] = useState(process.env.NEXT_PUBLIC_LOGIN);
   const [passwords, setPasswords] = useState(process.env.NEXT_PUBLIC_PASSWORD);
+  const [isLoader, setIsLoader] = useState(true);
 
   const [isLogged, setIsLogged] = useState("");
 
@@ -18,13 +17,16 @@ const AppWrapper = ({ children }) => {
     );
   }, []);
 
-  //   useEffect(() => {
-  //     window.localStorage.setItem("logins", logins);
-  //   }, [logins]);
+  useEffect(() => {
+    window.sessionStorage.getItem("isloader");
+  }, []);
 
-  //     useEffect(() => {
-  //       window.localStorage.setItem("passwords", passwords);
-  //     }, [passwords]);
+  useEffect(() => {
+    sessionStorage.setItem("isLoader", "false");
+    // if (sessionStorage.getItem("isloader") == true) {
+    //   setIsLoader(false);
+    // }
+  }, []);
 
   const contextValue = {
     isLogged,
@@ -33,6 +35,8 @@ const AppWrapper = ({ children }) => {
     setLogins,
     passwords,
     setPasswords,
+    isLoader,
+    setIsLoader,
   };
 
   return (

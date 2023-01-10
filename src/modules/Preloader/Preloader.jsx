@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "./Preloader.module.sass";
 
-export const Preloader = () => {
-  const [isLoader, setIsLoader] = useState(true);
+export const Preloader = ({ isLoader, setIsLoader }) => {
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoader(false);
-    }, 13000);
-  }, []);
+    }, 5000);
+  }, [setIsLoader]);
 
   return (
     <>
