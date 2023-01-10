@@ -12,6 +12,7 @@ export const Posts = ({ post, setPosts, posts, getData, isLoading, setIsLoading 
   const [title, setTitle] = useState(post.title);
   const [date, setDate] = useState(post.date);
   const [text, setText] = useState(post.text);
+  const [img, setImg] = useState(post.img);
 
   const { isLogged } = useContext(AppContext);
 
@@ -64,6 +65,8 @@ export const Posts = ({ post, setPosts, posts, getData, isLoading, setIsLoading 
                   posts={posts}
                   post={post}
                   getData={getData}
+                  img={img}
+                  setImg={setImg}
                 />
               )}
               <h4 className={styles.title}>{post.title}</h4>

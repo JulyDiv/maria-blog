@@ -16,9 +16,11 @@ export const ModalPost = ({
   posts,
   post,
   getData,
+  img,
+  setImg
 }) => {
   const { register, handleSubmit } = useForm({
-    defaultValues: { title: title, date: date, text: text },
+    defaultValues: { title: title, date: date, text: text, img: img },
   });
 
   const onSubmit = (data) => {
@@ -27,6 +29,7 @@ export const ModalPost = ({
       const postId = { ...post };
       axios
         .put(`${process.env.NEXT_PUBLIC_API_HOST}/posts/${postId.id}`, {
+          img: img,
           title: title,
           date: date,
           text: text,
@@ -63,10 +66,19 @@ export const ModalPost = ({
     let reader = new FileReader();
     reader.readAsDataURL(file);
 
-    reader.onload = function (e) {
+    if (isModalPostEdit) {
+      reader.onload = function (e) {
+        setImg(e.target.result);
+        console.log(e.target.result);
+      };
+    } else {
+      reader.onload = function (e) {
       setImgs(e.target.result);
       console.log(e.target.result);
     };
+    }
+
+    
   };
 
   return (
@@ -96,7 +108,7 @@ export const ModalPost = ({
                 className={styles.textarea}
                 placeholder="Пост"
               />
-              {isModalPostEdit ? "" : <label className={styles.label} htmlFor="input_file">
+              <label className={styles.label} htmlFor="input_file">
                 <input
                   {...register("img")}
                   type="file"
@@ -105,7 +117,7 @@ export const ModalPost = ({
                   id="input_file"
                 />
                 {imgs ? "Картинка готова!" : "Выбери картинку"}
-              </label>}
+              </label>
             </div>
             <button className={styles.button} type="submit">
               {isModalPostEdit ? "Редактировать пост" : "Добавить пост"}
