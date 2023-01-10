@@ -26,14 +26,21 @@
 .item
     &_wrapper
         padding: 20px
+        //min-height: 600px
+        height: 100%
     &_top
+        display: flex
+        flex-direction: column
+        justify-content: space-between
         border-radius: $borderRadius
         background-color: #efefef
+        min-height: 600px
         //padding: 20px 10px
         //box-shadow: $boxShadow
     &_bottom
         display: flex
         justify-content: center
+        //align-items: flex-end
         border-radius: $borderRadius
         background-color: #efefef
         //box-shadow: $boxShadow
@@ -52,6 +59,7 @@
         margin: 0 0 20px 0
         font-size: 22px
     &_bottom
+        margin-bottom: 10px
         font-size: 20px
 .date
     &_top, &_bottom

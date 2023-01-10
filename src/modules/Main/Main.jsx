@@ -38,18 +38,35 @@ export const Main = ({ isLogged, posts, setPosts }) => {
                 <span className={styles.top_line}></span>
               </div>
               <div className={styles.posts_wrapper}>
-                {posts.slice(-2).reverse().map((post, id) => (
-                  <div key={id}>
-                    <MainLastPost  post={post} />
-                  </div>
-                ))}
+                
+                {posts
+                  .slice(-2)
+                  .reverse()
+                  .map((post, id) => (
+                    <div key={id}><MainLastPost post={post} /></div>
+                  ))}
+                {/* {posts
+                  .slice(-1, 1)
+                  .reverse()
+                  .map((post, id) => (
+                    <MainLastPost key={id} post={post} />
+                  ))} */}
+                {/* {posts
+                  .slice(-2)
+                  .reverse()
+                  .map((post, id) => (
+                      <MainLastPost key={id} post={post} />
+                  ))} */}
               </div>
 
               <div className={styles.posts_wrapper}>
                 <MainPost posts={posts} />
               </div>
               <div className={styles.block}>
-              <Link href="/blog" className={styles.link}>Перейти в GSR-блог</Link></div>
+                <Link href="/blog" className={styles.link}>
+                  Перейти в GSR-блог
+                </Link>
+              </div>
             </div>
             <Contacts />
           </div>
