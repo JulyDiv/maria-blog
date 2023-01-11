@@ -63,6 +63,7 @@ export const Header = ({ setIsLogin, isLogin }) => {
         <ModalPost
           imgs={imgs}
           setImgs={setImgs}
+          isModalPost={isModalPost}
           setIsModalPost={setIsModalPost}
         />
       )}

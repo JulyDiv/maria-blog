@@ -6,6 +6,7 @@ import axios from "axios";
 export const ModalPost = ({
   imgs,
   setImgs,
+  isModalPost,
   setIsModalPost,
   isModalPostEdit,
   setIsModalPostEdit,
@@ -17,9 +18,9 @@ export const ModalPost = ({
   post,
   getData,
   img,
-  setImg
+  setImg,
 }) => {
-  const { register, handleSubmit } = useForm({
+  const { register, handleSubmit, reset } = useForm({
     defaultValues: { title: title, date: date, text: text, img: img },
   });
 
@@ -69,33 +70,44 @@ export const ModalPost = ({
     if (isModalPostEdit) {
       reader.onload = function (e) {
         setImg(e.target.result);
-        console.log(e.target.result);
+        //console.log(e.target.result);
       };
     } else {
       reader.onload = function (e) {
-      setImgs(e.target.result);
-      console.log(e.target.result);
-    };
+        setImgs(e.target.result);
+        //console.log(e.target.result);
+      };
     }
-
-    
   };
+
+  const onClick = () => {
+    isModalPostEdit && setIsModalPostEdit(false);
+    isModalPost && setIsModalPost(false);
+  }
 
   return (
     <>
       <div className={styles.post}>
         <div className={styles.wrapper}>
-          <h2 className={styles.title}>Сегодня я расскажу о...</h2>
+          <h2 className={styles.title}>
+            {isModalPost
+              ? "Сегодня я расскажу о..."
+              : "Внеси в меня правки"}
+          </h2>
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <div className={styles.block}>
               <input
-                {...register("title")}
+                {...register("title", {
+                  required: true
+                })}
                 type="text"
                 className={styles.input}
                 placeholder="Заголовок"
               />
               <input
-                {...register("date")}
+                {...register("date", {
+                  required: true
+                })}
                 type="text"
                 className={styles.input}
                 placeholder="Дата"
@@ -103,32 +115,44 @@ export const ModalPost = ({
             </div>
             <div className={styles.block}>
               <textarea
-                {...register("text")}
+                {...register("text", {
+                  required: true
+                })}
                 type="text"
                 className={styles.textarea}
                 placeholder="Пост"
               />
-              <label className={styles.label} htmlFor="input_file">
-                <input
-                  {...register("img")}
-                  type="file"
-                  onChange={(e) => handleSubmits(e)}
-                  className={styles.file}
-                  id="input_file"
-                />
-                {imgs ? "Картинка готова!" : "Выбери картинку"}
-              </label>
+              {isModalPost ? (
+                <label className={styles.label} htmlFor="input_file">
+                  <input
+                    {...register("img")}
+                    type="file"
+                    onChange={(e) => handleSubmits(e)}
+                    className={styles.file}
+                    id="input_file"
+                  />
+                  {imgs ? "Картинка готова!" : "Выбери картинку"}
+                </label>
+              ) : (
+                <label className={styles.label} htmlFor="input_file">
+                  <input
+                    {...register("img")}
+                    type="file"
+                    onChange={(e) => handleSubmits(e)}
+                    className={styles.file}
+                    id="input_file"
+                  />
+                  {img ? "Редактировать картинку" : "Загрузи картинку"}
+                </label>
+              )}
             </div>
             <button className={styles.button} type="submit">
               {isModalPostEdit ? "Редактировать пост" : "Добавить пост"}
             </button>
-            <button
-              className={styles.button}
-              onClick={() => setIsModalPost(false)}
-            >
-              Свернуть панель
-            </button>
           </form>
+          <button className={styles.button} onClick={() => onClick()}>
+            Свернуть панель
+          </button>
         </div>
       </div>
     </>
