@@ -1,9 +1,20 @@
 @import '../../../styles/var'
 
 .clip
-    padding: 50px 0
+    padding: 50px 0 0 0
 .wrapper
     width: 100%
     height: 500px
     background-image: url(../../../public/img/banner.jpg)
     background-position: center
+    background-repeat: no-repeat
+    background-size: 100%
+
+// @media (max-width: 1200px)
+@media (min-width: 768px) and (max-width: 900px)
+@media (min-width: 481px) and (max-width: 767px)
+    .wrapper
+        height: 300px
+@media (min-width: 320px) and (max-width: 480px)
+    .wrapper
+        height: 200px

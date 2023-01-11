@@ -20,19 +20,17 @@ export const Header = ({ setIsLogin, isLogin }) => {
         <div className="container">
           <div className={styles.wrapper}>
             <h1 className={styles.title}>Maria Gonza</h1>
-            <div className={styles.news}>
+            <Link
+                href="https://t.me/julia_gerber"
+                className={styles.news_link}
+              ><div className={styles.news}>
               <h4 className={styles.news_title}>
                 Разработка сайтов и Web-приложений
               </h4>
               <p className={styles.news_text}>
                 Под ключ/Уникальный крутой дизайн
               </p>
-              <Link
-                href="https://t.me/julia_gerber"
-                className={styles.news_link}
-              ></Link>
-              <span className={styles.news_span}>Напиши мне</span>
-            </div>
+            </div></Link>
           </div>
         </div>
         <Navbar

@@ -41,7 +41,15 @@ export const Blog = ({
   const pageNumbers = [];
   for (let i = 1; i <= postCount; i++) {
     pageNumbers.push(i);
+    // if (pageNumbers.length > 4) {
+    //   pageNumbers.slice(0, 4)
+    // } else {
+    //   pageNumbers.push(i);
+    // }
   }
+
+  //console.log(pageNumbers.length);
+  //console.log(postCount);
 
   const getData = async () => {
     setIsLoading(true);

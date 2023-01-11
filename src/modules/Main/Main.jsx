@@ -9,7 +9,6 @@ import { MainPost } from "../MainPost/MainPost";
 import { MainLastPost } from "../MainLastPost/MainLastPost";
 
 export const Main = ({ isLogged, posts, setPosts }) => {
-
   const getData = async () => {
     return await axios
       .get("https://broad-accidental-servant.glitch.me/posts", {})
@@ -38,27 +37,15 @@ export const Main = ({ isLogged, posts, setPosts }) => {
                 <span className={styles.top_line}></span>
               </div>
               <div className={styles.posts_wrapper}>
-                
                 {posts
                   .slice(-2)
                   .reverse()
                   .map((post, id) => (
-                    <div key={id}><MainLastPost post={post} /></div>
+                    <div key={id}>
+                      <MainLastPost post={post} />
+                    </div>
                   ))}
-                {/* {posts
-                  .slice(-1, 1)
-                  .reverse()
-                  .map((post, id) => (
-                    <MainLastPost key={id} post={post} />
-                  ))} */}
-                {/* {posts
-                  .slice(-2)
-                  .reverse()
-                  .map((post, id) => (
-                      <MainLastPost key={id} post={post} />
-                  ))} */}
               </div>
-
               <div className={styles.posts_wrapper}>
                 <MainPost posts={posts} />
               </div>

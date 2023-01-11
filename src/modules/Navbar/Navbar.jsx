@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.sass";
 import { useRouter } from "next/router";
@@ -10,6 +10,9 @@ export const Navbar = ({
   setIsLogged,
   setIsModalPost,
 }) => {
+
+  const [isHidden, setIsHidden] = useState(false);
+
   const onClick = () => {
     setIsLogged(localStorage.clear());
     window.location.reload();
@@ -33,13 +36,19 @@ export const Navbar = ({
               <Link href="/" className={styles.link_item}>
                 Главная
               </Link>
-              <Link href="/" className={styles.link_item}>
+              <Link
+                href="/"
+                className={`${styles.link_item} ${styles.link_item_hidden}`}
+              >
                 Проекты
               </Link>
-              <Link href="/" className={styles.link_item}>
+              <Link
+                href="/"
+                className={`${styles.link_item} ${styles.link_item_hidden}`}
+              >
                 Услуги
               </Link>
-              <Link href="/" className={styles.link_item}>
+              <Link href="/" className={`${styles.link_item} ${styles.link_item_hidden}`}>
                 Кейсы
               </Link>
               <Link href="/blog" className={styles.link_item}>
@@ -48,17 +57,14 @@ export const Navbar = ({
             </div>
             {isLogged ? (
               <>
-                <button
-                  className={styles.button}
-                  onClick={() => onClick()}
-                >
+                <button className={styles.button} onClick={() => onClick()}>
                   Logout
                 </button>
               </>
             ) : (
               <button
                 className={styles.button}
-                onClick={() => isLogin ? setIsLogin(false) : setIsLogin(true)}
+                onClick={() => (isLogin ? setIsLogin(false) : setIsLogin(true))}
               >
                 Login
               </button>
