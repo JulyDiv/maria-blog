@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.sass";
-import { useRouter } from "next/router";
 
 export const Navbar = ({
   setIsLogin,
@@ -11,7 +10,7 @@ export const Navbar = ({
   setIsModalPost,
 }) => {
 
-  const [isHidden, setIsHidden] = useState(false);
+  const [isButtonMobile, setIsButtonMobile] = useState(false);
 
   const onClick = () => {
     setIsLogged(localStorage.clear());
@@ -19,13 +18,6 @@ export const Navbar = ({
     setIsLogin(false);
     setIsModalPost(false);
   };
-
-  const router = useRouter();
-
-  // const handleOnClick = (e) => {
-  //   e.preventDefault();
-  //   router.push("/");
-  // }
 
   return (
     <>

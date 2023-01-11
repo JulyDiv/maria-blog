@@ -35,6 +35,7 @@ export const Footer = () => {
                 </Link>
               </div>
             </div>
+            <h1 className={styles.title}>Maria Gonza</h1>
             <div className={styles.right}>
               <div className={styles.icon}>
                 <Link

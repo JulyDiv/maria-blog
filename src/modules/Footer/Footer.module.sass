@@ -16,6 +16,15 @@
     border-bottom: 1px solid $bgColor2
     //border: 1px solid white
 
+.title
+    display: flex
+    align-items: center
+    //margin-right: 20px
+    color: $bgColor2
+    font-size: 50px
+    text-transform: uppercase
+    text-align: center
+
 .right
     display: flex
     align-items: center
@@ -24,7 +33,7 @@
     display: flex
     justify-content: space-between
     flex-direction: column
-    height: 100%
+    width: 250px
     height: 180px
     //width: 500px
     &_item
@@ -62,14 +71,18 @@
             background-image: url("../../../public/img/youtube-white.svg")
 
 // @media (max-width: 1200px)
-// @media (min-width: 768px) and (max-width: 900px)
+@media (min-width: 768px) and (max-width: 900px)
+    .title
+        display: none
 @media (min-width: 481px) and (max-width: 767px)
-    .wrapper
-        //flex-direction: column
+    .title
+        display: none
 @media (min-width: 320px) and (max-width: 480px)
     .wrapper
         flex-direction: column
         border: none
+    .title
+        display: none
     .left
         padding: 50px 0
         border-top: 1px solid $bgColor2

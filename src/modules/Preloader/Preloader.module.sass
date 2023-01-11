@@ -9,7 +9,6 @@
     width: 100%
     height: 100%
     background: linear-gradient(180deg, rgb(53, 0, 2) 13%, rgb(210, 210, 201) 150%, rgb(210, 210, 201) 100%)
-    //animation: hidden 10s both
     &_hidden
         display: none
 
@@ -31,7 +30,6 @@
 .typewriter
     color: $bgColor2
     animation: typewriter 3s steps(24) 1s 1 normal both, cursor 400ms steps(24) infinite normal
-    // animation: typewriter 4s steps(44) 1s 1 normal both, cursor 500ms steps(44) infinite normal, hidden 10s both
 
 @keyframes typewriter
     from
@@ -44,11 +42,3 @@
         border-right-color: rgba(255,255,255,.75)
     to
         border-right-color: transparent
-
-@keyframes hidden
-    0%
-        opacity: 1
-    80%
-        opacity: 1
-    100%
-        opacity: 0
