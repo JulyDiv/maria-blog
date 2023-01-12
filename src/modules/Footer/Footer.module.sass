@@ -2,7 +2,6 @@
 
 .footer
     padding: 50px 0
-    //height: 300px
     background-color: $linePost
 
 .wrapper
@@ -11,15 +10,12 @@
     margin: auto
     padding: 20px 0
     width: 90%
-    //height: 100%
     border-top: 1px solid $bgColor2
     border-bottom: 1px solid $bgColor2
-    //border: 1px solid white
 
 .title
     display: flex
     align-items: center
-    //margin-right: 20px
     color: $bgColor2
     font-size: 50px
     text-transform: uppercase
@@ -28,14 +24,16 @@
 .right
     display: flex
     align-items: center
+    justify-content: flex-end
+    width: 50%
+.left
+    width: 50%
 
 .link
     display: flex
     justify-content: space-between
     flex-direction: column
-    width: 250px
     height: 180px
-    //width: 500px
     &_item
         color: $bgColor2
         +link
@@ -45,12 +43,7 @@
 .icon
     display: flex
     justify-content: space-between
-    //justify-content: center
-    //flex-wrap: wrap
-    width: 250px
     &_item
-        //margin: 10px
-        //margin: 0 15px 15px 0
         width: 70px
         height: 70px
         border-radius: 50%
@@ -58,8 +51,6 @@
         background-position: center
         background-repeat: no-repeat
         background-color: $linePost
-        &:last-child
-            //margin: 0 0px 15px 0
         &:hover
             box-shadow: $boxShadow
         &_telegram
@@ -70,7 +61,6 @@
         &_youtube
             background-image: url("../../../public/img/youtube-white.svg")
 
-// @media (max-width: 1200px)
 @media (min-width: 768px) and (max-width: 900px)
     .title
         display: none

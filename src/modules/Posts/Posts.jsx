@@ -34,7 +34,7 @@ export const Posts = ({ post, setPosts, posts, getData, isLoading, setIsLoading 
     setIsModalPostEdit(true);
   };
 
-  //console.log(post);
+  console.log(post.img);
 
   return (
     <>
@@ -42,7 +42,8 @@ export const Posts = ({ post, setPosts, posts, getData, isLoading, setIsLoading 
         {/* <div className={`container`}> */}
         <div className={styles.wrapper}>
           <div key={post.id} className={styles.main}>
-            <img className={styles.main_img} src={post.img} alt="photo: post" />
+            <div className={styles.img} style={{ backgroundImage: `url(${post.img})` }}></div>
+            {/* <img className={styles.main_img} src={post.img} alt="photo: post" /> */}
             <div className={styles.block}>
               {isLogged && (
                 <div className={styles.block_button}>
