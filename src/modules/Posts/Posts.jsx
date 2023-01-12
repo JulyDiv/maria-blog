@@ -34,7 +34,7 @@ export const Posts = ({ post, setPosts, posts, getData, isLoading, setIsLoading 
     setIsModalPostEdit(true);
   };
 
-  console.log(post.img);
+  //console.log(post.img);
 
   return (
     <>

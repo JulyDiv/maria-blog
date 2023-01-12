@@ -1,0 +1,69 @@
+@import '../../../styles/var'
+
+.posts
+    position: fixed
+    top: 2%
+    z-index: 6
+    //margin: auto
+    padding: 0 0 50px 0
+    width: 90%
+    height: 100%
+    overflow-x: hidden
+    overflow-y: auto
+    border-radius: $borderRadius
+    &::-webkit-scrollbar
+        width: 0
+.img
+    width: 100%
+    height: 400px
+    //background-size: 100%
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+.wrapper
+    display: flex
+    justify-content: center
+.button
+    width: 200px
+    border: 2px solid $linePost
+    &:hover
+        box-shadow: 1px 0px 10px 3px rgba(53, 0, 2, 0.51)
+.main
+    //width: 60%
+    border-radius: $borderRadius
+    background-color: #efefef
+    box-shadow: $boxShadow
+    overflow: hidden
+    &_img
+        width: 100%
+.block
+    padding: 30px
+    &_button
+        display: flex
+        justify-content: center
+        margin: 30px auto auto
+        width: 100%
+.title
+    margin-bottom: 20px
+    font-size: 20px
+.text
+    padding: 10px 0
+    line-height: 25px
+    font-size: 18px
+    color: $textColor
+    border-bottom: 3px solid $bgColor2
+    border-top: 3px solid $linePost
+    white-space: pre-wrap
+    //text-overflow: ellipsis
+.span
+    display: inline-block
+    margin-bottom: 30px
+    +link
+.button
+    margin-right: 20px
+    padding: 5px 10px
+    border: 2px solid $linePost
+    &:hover
+        box-shadow: 1px 0px 10px 3px rgba(53, 0, 2, 0.51)
+    &:last-child
+        margin-right: 0

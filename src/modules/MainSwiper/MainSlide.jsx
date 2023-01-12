@@ -1,12 +1,18 @@
 import React from "react";
-import { SwiperSlide } from "swiper/react";
 import styles from "./MainSwiper.module.sass";
 
-export const MainSlide = ({ post }) => {
+export const MainSlide = ({ post, setIsModalMain }) => {
+
+  const onClick = () => {
+    setIsModalMain(true);
+    setIsModalMain(post);
+  }
+
     return (
       <>
         <div key={post.id} className={styles.item}>
           <div
+          onClick={() => onClick()}
             className={styles.img}
             style={{ backgroundImage: `url(${post.img})` }}
           ></div>

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useRef, useState } from "react";
+import React from "react";
 //import styles from "../Main/Main.module.sass";
 import styles from "../MainPost/MainPost.module.sass";
 

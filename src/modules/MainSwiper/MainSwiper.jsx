@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { A11y, Keyboard, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { MainSlide } from "./MainSlide";
+import { ModalMain } from "../ModalMain/ModalMain";
 
-export const MainSwiper = ({ posts }) => {
+export const MainSwiper = ({ posts, isModalMain, setIsModalMain }) => {
+
   function getRandomItems(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       const randomIndex = Math.floor(Math.random() * (i + 1));
@@ -13,7 +15,9 @@ export const MainSwiper = ({ posts }) => {
     }
     return arr;
   }
+
   const random = getRandomItems(posts);
+
   return (
     <>
       <Swiper
@@ -23,26 +27,31 @@ export const MainSwiper = ({ posts }) => {
         keyboard={{ enabled: true, onlyInViewport: false }}
         autoplay={{ delay: 5500, disableOnInteraction: false }}
         breakpoints={{
-            767: {
-              slidesPerView: 2,
-              spaceBetween: 40,
-            },
-            480: {
-              slidesPerView: 1,
-              spaceBetween: 30,
-            },
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-          }}
+          767: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+        }}
       >
         {random.map((post, id) => (
           <SwiperSlide key={id}>
-            <MainSlide post={post} />
+            <MainSlide
+              post={post}
+              isModalMain={isModalMain}
+              setIsModalMain={setIsModalMain}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
+      {/* {isModalMain && <ModalMain isModalMain={isModalMain} setIsModalMain={setIsModalMain} />} */}
     </>
   );
 };
