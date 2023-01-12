@@ -11,13 +11,13 @@ export const Preloader = ({ isLoader, setIsLoader }) => {
 
   return (
     <>
-      {/* {isLoader ? (
+      {isLoader ? (
         <div className={styles.preloader}>
         <p className={styles.title}>Maria Gonza</p>
       </div>
       ) : (
         ""
-      )} */}
+      )}
     </>
   );
 };

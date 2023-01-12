@@ -59,17 +59,12 @@ export const Main = ({ isLogged, posts, setPosts }) => {
                         </div>
                       ))}
                   </div>
-                  {/* <div></div> */}
                   <div className={styles.swiper}>
                     <MainSwiper posts={posts} />
                   </div>
                   <div className={styles.swiper}>
                     <MainSwiper posts={posts} />
                   </div>
-
-                  {/* <div className={styles.posts_wrapper}>
-                    <MainPost posts={posts} />
-                  </div> */}
                 </>
               )}
               <div className={styles.block}>
@@ -80,8 +75,6 @@ export const Main = ({ isLogged, posts, setPosts }) => {
             </div>
             <Contacts />
           </div>
-          {/* <MainSwiper posts={posts} />
-          <MainSwiper posts={posts} /> */}
         </div>
       </section>
     </>
