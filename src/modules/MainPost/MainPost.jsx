@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-import styles from "../Main/Main.module.sass";
+import React, { useRef, useState } from "react";
+//import styles from "../Main/Main.module.sass";
+import styles from "../MainPost/MainPost.module.sass";
 
 export const MainPost = ({ posts }) => {
   function getRandomItems(arr) {
@@ -16,6 +17,18 @@ export const MainPost = ({ posts }) => {
   return (
     <>
       {random.slice(0, 4).map((item) => (
+        <div key={item.id} className={styles.item}>
+          <div
+            className={styles.img}
+            style={{ backgroundImage: `url(${item.img})` }}
+          ></div>
+          <div className={styles.info}>
+            <h5 className={styles.title}>{item.title}</h5>
+            <p className={styles.date}>{item.date}</p>
+          </div>
+        </div>
+      ))}
+      {/* {random.slice(0, 4).map((item) => (
         <div key={item.id} className={styles.item_bottom}>
           <div
             className={styles.img_bottom}
@@ -26,20 +39,7 @@ export const MainPost = ({ posts }) => {
             <p className={styles.date_bottom}>{item.date}</p>
           </div>
         </div>
-      ))}
-      {/* {posts
-          .slice(-2)
-          .reverse()
-          .map(({ id, title, text, date, img }) => (
-            <div key={id} className={styles.item_top}>
-              <img className={styles.img_top} src={img} alt="photo" />
-              <div className={styles.item_wrapper}>
-                <h5 className={styles.title_top}>{title}</h5>
-                <p className={styles.date_top}>{date}</p>
-                <p className={styles.text_top}>{text}</p>
-              </div>
-            </div>
-          ))} */}
+      ))} */}
     </>
   );
 };

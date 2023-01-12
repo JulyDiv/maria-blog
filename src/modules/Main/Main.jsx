@@ -7,15 +7,15 @@ import axios from "axios";
 import { Contacts } from "../Contacts/Contacts";
 import { MainPost } from "../MainPost/MainPost";
 import { MainLastPost } from "../MainLastPost/MainLastPost";
+import { MainSwiper } from "../MainSwiper/MainSwiper";
 
 export const Main = ({ isLogged, posts, setPosts }) => {
-
   const [isLoading, setIsLoading] = useState(false);
 
   const getData = async () => {
     setIsLoading(true);
     return await axios
-      .get("https://broad-accidental-servant.glitch.me/postsы", {})
+      .get("https://broad-accidental-servant.glitch.me/posts", {})
       .then(({ data }) => {
         setIsLoading(false);
         setPosts(data);
@@ -59,9 +59,17 @@ export const Main = ({ isLogged, posts, setPosts }) => {
                         </div>
                       ))}
                   </div>
-                  <div className={styles.posts_wrapper}>
-                    <MainPost posts={posts} />
+                  {/* <div></div> */}
+                  <div className={styles.swiper}>
+                    <MainSwiper posts={posts} />
                   </div>
+                  <div className={styles.swiper}>
+                    <MainSwiper posts={posts} />
+                  </div>
+
+                  {/* <div className={styles.posts_wrapper}>
+                    <MainPost posts={posts} />
+                  </div> */}
                 </>
               )}
               <div className={styles.block}>
@@ -72,6 +80,8 @@ export const Main = ({ isLogged, posts, setPosts }) => {
             </div>
             <Contacts />
           </div>
+          {/* <MainSwiper posts={posts} />
+          <MainSwiper posts={posts} /> */}
         </div>
       </section>
     </>

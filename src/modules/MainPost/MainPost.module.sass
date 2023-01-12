@@ -1,0 +1,36 @@
+@import '../../../styles/var'
+
+.item
+    display: flex
+    justify-content: center
+    border-radius: $borderRadius
+    background-color: #efefef
+    overflow: hidden
+    min-height: 150px
+.info
+    padding: 10px 20px
+    width: 100%
+.title
+    margin-bottom: 10px
+    font-size: 18px
+    //text-overflow: ellipsis
+.date
+    font-size: 18px
+.img
+    width: 100%
+    height: 100%
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    border-radius: 8px 0 0 8px
+
+@media (max-width: 1200px)
+@media (min-width: 768px) and (max-width: 900px)
+@media (min-width: 481px) and (max-width: 767px)
+@media (min-width: 320px) and (max-width: 480px)
+    .title
+        font-size: 14px
+    .info
+        padding: 10px
+    .date
+        font-size: 14px
