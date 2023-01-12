@@ -9,6 +9,7 @@
     display: flex
     justify-content: space-between
     align-items: center
+    padding-bottom: 50px
     &_line
         display: inline-block
         width: 90%
@@ -23,9 +24,9 @@
         grid-template-columns: repeat(2, 1fr)
         column-gap: 45px
         row-gap: 45px
-        padding: 45px 0
+        padding: 0 0 45px 0
 .swiper
-    margin-bottom: 45px
+    padding-bottom: 45px
 .item
     &_wrapper
         display: flex
@@ -107,6 +108,7 @@
     display: flex
     justify-content: center
     align-items: center
+    padding-top: 45px
 .link
     display: flex
     justify-content: center
@@ -118,7 +120,7 @@
 
 .preloader
     width: 100%
-    height: 100%
+    height: 55%
     background: linear-gradient(180deg, rgb(53, 0, 2) 13%, rgb(210, 210, 201) 150%, rgb(210, 210, 201) 100%)
     border-radius: $borderRadius
 
@@ -164,6 +166,10 @@
         width: 100%
     .item
         &_top
+    .preloader
+        background: inherit
+    .line
+        color: $linePost
 @media (min-width: 481px) and (max-width: 767px)
     .top
         &_span
@@ -176,6 +182,10 @@
         width: 100%
         &_wrapper
             grid-template-columns: repeat(1, 1fr)
+    .preloader
+        background: inherit
+    .line
+        color: $linePost
 @media (min-width: 320px) and (max-width: 480px)
     .top
         &_span
@@ -197,3 +207,7 @@
     .date
         &_bottom
             font-size: 14px
+    .preloader
+        background: inherit
+    .line
+        color: $linePost
