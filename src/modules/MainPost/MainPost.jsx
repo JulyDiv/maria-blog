@@ -21,7 +21,6 @@ export const MainPost = ({ posts }) => {
             className={styles.img_bottom}
             style={{ backgroundImage: `url(${item.img})` }}
           ></div>
-          {/* <img className={styles.img_bottom} src={item.img} alt="photo" /> */}
           <div className={styles.info}>
             <h5 className={styles.title_bottom}>{item.title}</h5>
             <p className={styles.date_bottom}>{item.date}</p>

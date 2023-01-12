@@ -6,39 +6,40 @@
     right: 0
     left: 0
     bottom: 0
+    z-index: 5
     width: 100%
     height: 100%
     background: linear-gradient(180deg, rgb(53, 0, 2) 13%, rgb(210, 210, 201) 150%, rgb(210, 210, 201) 100%)
-    &_hidden
-        display: none
+    animation: active 8s 1 both
 
-.line
+.title
     position: relative
     top: 50%
-    width: 100px
-    margin: 0 auto
-    border-right: 2px solid rgba(255,255,255,.75)
+    padding: 0 30px
     text-transform: uppercase
     font-size: 46px
     text-align: center
-    white-space: nowrap
-    overflow: hidden
     transform: translateY(-50%)
     color: $bgColor2
+    animation: hidden 7s 1 both
     +title
 
-.typewriter
-    color: $bgColor2
-    animation: typewriter 3s steps(24) 1s 1 normal both, cursor 400ms steps(24) infinite normal
+@keyframes hidden
+    0%
+        opacity: 0
+    40%
+        opacity: 1
+    90%
+        opacity: 1
+    100%
+        opacity: 0
 
-@keyframes typewriter
-    from
-        width: 0
-    to
-        width: 500px
-
-@keyframes cursor
-    from
-        border-right-color: rgba(255,255,255,.75)
-    to
-        border-right-color: transparent
+@keyframes active
+    0%
+        opacity: 1
+    40%
+        opacity: 1
+    90%
+        opacity: 1
+    100%
+        opacity: 0

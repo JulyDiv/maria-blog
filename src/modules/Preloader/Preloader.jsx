@@ -6,15 +6,15 @@ export const Preloader = ({ isLoader, setIsLoader }) => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoader(false);
-    }, 5000);
+    }, 8000);
   }, [setIsLoader]);
 
   return (
     <>
       {isLoader ? (
         <div className={styles.preloader}>
-          <p className={`${styles.line} ${styles.typewriter}`}>Maria Gonza</p>
-        </div>
+        <p className={styles.title}>Maria Gonza</p>
+      </div>
       ) : (
         ""
       )}

@@ -15,7 +15,7 @@ export const Main = ({ isLogged, posts, setPosts }) => {
   const getData = async () => {
     setIsLoading(true);
     return await axios
-      .get("https://broad-accidental-servant.glitch.me/posts", {})
+      .get("https://broad-accidental-servant.glitch.me/postsы", {})
       .then(({ data }) => {
         setIsLoading(false);
         setPosts(data);
@@ -44,7 +44,7 @@ export const Main = ({ isLogged, posts, setPosts }) => {
               {isLoading ? (
                 <div className={styles.preloader}>
                   <p className={`${styles.line} ${styles.typewriter}`}>
-                    Maria Gonza
+                    Загружаю...
                   </p>
                 </div>
               ) : (

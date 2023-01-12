@@ -8,11 +8,11 @@ export const Contacts = () => {
       <div className={styles.contacts}>
         <div className={styles.icon}>
           <Link
-            href="https://t.me/mariagonzaaa"
+            href="t.me/gonzaingsr"
             className={`${styles.icon_item} ${styles.icon_item_telegram}`}
           ></Link>
           <Link
-            href="https://instagram.com/gonzabutterfly?igshid=YmMyMTA2M2Y="
+            href="https://www.instagram.com/invites/contact/?i=nx4wjxay5jn7&utm_content=qaxey22"
             className={`${styles.icon_item} ${styles.icon_item_instagram}`}
           ></Link>
           <Link

@@ -50,7 +50,7 @@ export const Navbar = ({
             {isLogged ? (
               <>
                 <button className={styles.button} onClick={() => onClick()}>
-                  Logout
+                  
                 </button>
               </>
             ) : (
@@ -58,7 +58,7 @@ export const Navbar = ({
                 className={styles.button}
                 onClick={() => (isLogin ? setIsLogin(false) : setIsLogin(true))}
               >
-                Login
+                
               </button>
             )}
           </div>
