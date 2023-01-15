@@ -21,10 +21,11 @@ export const MainLastPost = ({ post, isModalMain, setIsModalMain }) => {
           <h5 className={styles.title_top}>{post.title}</h5>
           <p className={styles.date_top}>{post.date}</p>
           <p className={styles.text_top}>{post.text}</p>
-          <button className={styles.button} onClick={() => onClick()}>
-            Читать дальше
-          </button>
         </div>
+        <div className={styles.block_button}>
+        <button className={styles.button} onClick={() => onClick()}>
+          Читать дальше
+        </button></div>
       </div>
       {/* {isModalMain && <ModalMain post={post} isModalMain={isModalMain} setIsModalMain={setIsModalMain} />} */}
     </>

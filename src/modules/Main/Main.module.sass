@@ -101,9 +101,10 @@
         //overflow: hidden
         //text-overflow: ellipsis
 .button
-    margin: 20px 0 0 0
+    //margin: 20px 0 0 0
     padding: 5px 0
     width: 100%
+    height: 40px
     border: 2px solid $linePost
     &:hover
         box-shadow: 1px 0px 10px 3px rgba(53, 0, 2, 0.51)
@@ -112,6 +113,11 @@
     justify-content: center
     align-items: center
     padding-top: 45px
+    &_button
+        display: flex
+        flex-grow: 1
+        align-items: flex-end
+        padding: 0 20px 20px 20px
 .link
     display: flex
     justify-content: center
