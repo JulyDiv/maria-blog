@@ -10,10 +10,18 @@ export const Pagination = ({
   leftPortionPageNumber,
   rightPortionPageNumber,
   portionNumber,
+  portionCount,
+  nextPage,
+  prevPage
 }) => {
 
   return (
     <>
+      {portionNumber > 1 && (
+        <button className={styles.button_change} onClick={() => prevPage()}>
+          Предыдущие
+        </button>
+      )}
       <div className={styles.pagination}>
         <ul className={styles.list}>
           {pageNumbers
@@ -38,6 +46,11 @@ export const Pagination = ({
             ))}
         </ul>
       </div>
+      {portionCount > portionNumber && (
+        <button className={styles.button_change} onClick={() => nextPage()}>
+          Далее
+        </button>
+      )}
       {/* <div className={styles.pagination}>
         <ul className={styles.list}>
           {pageNumbers.map((number) => (
