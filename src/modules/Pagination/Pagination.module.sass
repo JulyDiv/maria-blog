@@ -1,13 +1,13 @@
 @import '../../../styles/var'
 
 .pagination
-    width: 55%
+    display: flex
+    justify-content: center
+    width: 90%
 
 .list
     display: flex
-    justify-content: center
-    //justify-content: space-between
-    flex-wrap: wrap
+    justify-content: space-between
 
 .item
     margin: 10px
@@ -15,16 +15,22 @@
 .button
     padding: 5px 0
     width: 50px
-    color: $textColor
+    color: $bgColor2
     +link
     border: 2px solid $linePost
     font-size: 14px
+    background-color: $linePost
     &:hover
         box-shadow: 1px 0px 10px 3px rgba(53, 0, 2, 0.51)
+    &_active, &:focus
+        background-color: $bgColor2
+        color: $linePost
+        box-shadow: 1px 0px 10px 3px rgba(53, 0, 2, 0.51)
+        border: 2px solid $linePost
 
-// @media (max-width: 1200px)
-@media (min-width: 768px) and (max-width: 900px)
-    .pagination
-        width: 60%
-// @media (min-width: 481px) and (max-width: 767px)
-// @media (min-width: 320px) and (max-width: 480px)
+//@media (max-width: 1200px)
+//@media (min-width: 768px) and (max-width: 900px)
+//@media (min-width: 481px) and (max-width: 767px)
+@media (min-width: 320px) and (max-width: 480px)
+    .button
+        width: 40px
