@@ -1,3 +1,20 @@
+### Brioni (интернет-магазин)
+
+#### Ссылка на макет Figma:
+##### Работа выполнена без макета
+
+#### Ссылка на деплой:
+https://maria-blog.vercel.app/
+
+#### Стек технологий:
+
+:star2: HTML5 - верстка (адаптивная и кроссбраузерная) <br>
+:star2: CSS3 с использованием sass.module - стилизация элементов - работаю по методологии БЭМ, использую Flexbox, Grid <br>
+:star2: React/Next.js <br>
+
+##### Связаться со мной: 
+##### [https://t.me/julia_gerber] - Telegram
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
