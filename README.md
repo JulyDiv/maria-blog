@@ -31,6 +31,8 @@ https://maria-blog.vercel.app/
 :star2: CSS3 с использованием sass.module - стилизация элементов - работаю по методологии БЭМ, использую Flexbox, Grid <br>
 :star2: React/Next.js <br>
 
+Реальный коммерческий проект
+
 ##### Связаться со мной: 
 ##### [https://t.me/julia_gerber] - Telegram
 
