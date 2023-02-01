@@ -1,3 +1,21 @@
+### Maria-blog (блог - коммерческий проект)
+
+#### Ссылка на макет Figma:
+##### Работа выполнена без макета
+
+#### Ссылка на деплой:
+https://maria-blog.vercel.app/
+![Снимок](https://user-images.githubusercontent.com/99066910/215967793-4bc75901-3b55-4610-be21-08c7440c5819.PNG)
+
+#### Стек технологий:
+
+:star2: HTML5 - верстка (адаптивная и кроссбраузерная) <br>
+:star2: CSS3 с использованием sass.module - стилизация элементов - работаю по методологии БЭМ, использую Flexbox, Grid <br>
+:star2: React/Next.js <br>
+
+##### Связаться со мной: 
+##### [https://t.me/julia_gerber] - Telegram
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
