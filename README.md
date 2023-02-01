@@ -5,6 +5,7 @@
 
 #### Ссылка на деплой:
 https://maria-blog.vercel.app/
+![Снимок](https://user-images.githubusercontent.com/99066910/215967793-4bc75901-3b55-4610-be21-08c7440c5819.PNG)
 
 #### Стек технологий:
 
